@@ -1,0 +1,91 @@
+.main {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+     width: 100vw;
+    height: 100vh; 
+    padding: 1.5rem;
+    
+}
+
+section {
+    display: flex;
+    flex-flow: column;
+    width: fit-content;
+    height: fit-content;
+}
+
+.tabpanel {
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+form {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 300px;
+    height: 400px;
+    
+}
+
+.link {
+    color: rgb(51, 51, 51);
+    font-size: 1rem;
+    text-decoration: underline;
+}
+
+.link:hover {
+    color: orange;
+    cursor: grab;
+}
+
+.login-form .title {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+}
+
+
+.label {
+    margin-top: 20px;
+    width: 100%;
+    text-align: start;
+    color: grey;
+}
+
+.input {
+    display: flex;
+    background-color: #f4f0f1;
+    border: 0;
+    border-radius: 0.4rem;
+    color: #000a47;
+    font-size: 1rem;
+    outline: 0;
+    padding: 10px;
+    margin-top:30px;
+    width: 100%;
+  
+}
+
+.submit {
+    background-color:#a378ff ;
+    border: 0;
+    border-radius: 0.4rem;
+    width: 100%;
+    margin-top: 40px;
+    color: white;
+    padding: 10px;
+
+}
+
+.submit:hover {
+    background-color:#773cf3 ;
+}
+

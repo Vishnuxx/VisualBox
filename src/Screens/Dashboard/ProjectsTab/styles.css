@@ -1,0 +1,42 @@
+.projectsTab {
+  height: 100%;
+  width: 100%;
+  display: grid;
+}
+
+.menu {
+  grid-area: menu;
+  display: flex;
+  height: 50px;
+  margin: 0;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.createButton:hover {
+  background-color: #18a71e;
+}
+
+
+@media (max-width: 600px) {
+
+  .projectsTab {
+      grid-template: 
+      "menu";
+  }
+
+  .createButton {
+  border: none;
+  background-color: #35be4b;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  min-width: 100px;
+  height: fit-content;
+  padding: 10px;
+  margin-right: 30px;
+  box-shadow: 0px 0px 2px 0px rgb(205, 205, 205);
+}
+
+
+}

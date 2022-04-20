@@ -1,0 +1,70 @@
+main {
+  height: 100vh;
+  padding: 30px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+}
+
+.title {
+  margin-top: 10vh;
+  font-size: 2.5rem;
+  word-wrap: normal;
+}
+
+.content {
+  
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+ 
+  
+}
+
+.btn {
+    border-radius: 5px;
+}
+
+.login {
+  color: white;
+  background-color: #a378ff;
+}
+.login:hover {
+  background-color: #773cf3;
+}
+
+.signup {
+  color: black;
+  background-color: #ebebeb;
+}
+.signup:hover {
+  background-color: #d8caf6;
+}
+
+@media only screen and (max-width : 420px) {
+  /* mobile */
+
+  .btn {
+      padding: 20px;
+      margin: 10px;
+      width: 60vw;
+  }
+
+}
+
+@media only screen and (min-width : 421px) {
+
+.title {
+    font-size: 2.9rem;
+}
+  .btn {
+      padding: 20px;
+      margin: 10px;
+      width: 200px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  /* desktop */
+}

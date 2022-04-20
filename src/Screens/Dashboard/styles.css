@@ -1,0 +1,121 @@
+@media screen and (max-width: 650px) {
+  main {
+    display: grid;
+    grid-template:
+      "menubar" 50px
+      "panel" 1fr
+      "nav" 50px;
+    overflow: hidden;
+    padding: 0;
+    height: 100%;
+  }
+
+  .menubar {
+    grid-area: menubar;
+    background-color: rgb(46, 42, 51);
+    margin: 0;
+  }
+
+  .panel {
+    grid-area: panel;
+    display: flex;
+    flex-direction: row;
+    
+  }
+
+  nav {
+    grid-area: nav;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    border-top: 1px solid #dddddd;
+  }
+
+  .navItem {
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    padding: auto;
+  }
+
+  .navItem.active {
+    background-color: #f1f1f1;
+    border-top: 5px solid #8b56fc;
+    padding: auto;
+  }
+
+  .navItem .label {
+    color: gray;
+
+    text-align: justify;
+  }
+
+  .navItem:hover {
+    background-color: rgb(228, 228, 228);
+  }
+}
+
+@media screen and (min-width: 651px) {
+  main {
+    display: grid;
+    grid-template:
+      "menubar menubar menubar " 50px
+      "nav  panel panel" 1fr
+      / 200px 1fr 1fr;
+    height: 100vh;
+  }
+
+  .menubar {
+    grid-area: menubar;
+    background-color: rgb(46, 42, 51);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+ 
+
+  .panel {
+    grid-area: panel;
+    background-color: rgb(255, 255, 255);
+  }
+
+   nav {
+    grid-area: nav;
+    display: flex;
+    flex-flow: column;
+    width: 200px;
+    border-right: 1px solid #dddddd;
+    z-index: 1;
+  }
+
+  .navItem {
+    width: 100%;
+    cursor: pointer;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    
+    padding: auto;
+  }
+
+  .navItem .label {
+    color: gray;
+
+    text-align: justify;
+  }
+
+  .navItem.active {
+    background-color: #f1f1f1;
+    border-right: 5px solid #8b56fc;
+    padding: auto;
+  }
+
+
+  .navItem:hover {
+    background-color: rgb(228, 228, 228);
+  }
+}
