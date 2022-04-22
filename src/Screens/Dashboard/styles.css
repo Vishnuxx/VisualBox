@@ -3,11 +3,11 @@
     display: grid;
     grid-template:
       "menubar" 50px
-      "panel" 1fr
+      "panel" auto
       "nav" 50px;
     overflow: hidden;
     padding: 0;
-    height: 100%;
+    height: 100vh;
   }
 
   .menubar {
@@ -20,6 +20,7 @@
     grid-area: panel;
     display: flex;
     flex-direction: row;
+    height: calc(100vh - 50px);
     
   }
 
@@ -27,10 +28,14 @@
     grid-area: nav;
     display: flex;
     flex-flow: row;
+    height: 50px;
     justify-content: space-around;
     align-items: center;
     width: 100%;
     border-top: 1px solid #dddddd;
+    position: absolute;
+    bottom: 0;
+    background-color: white;
   }
 
   .navItem {
@@ -63,9 +68,10 @@
     display: grid;
     grid-template:
       "menubar menubar menubar " 50px
-      "nav  panel panel" 1fr
+      "nav  panel panel" calc(100vh - 50px)
       / 200px 1fr 1fr;
     height: 100vh;
+    
   }
 
   .menubar {

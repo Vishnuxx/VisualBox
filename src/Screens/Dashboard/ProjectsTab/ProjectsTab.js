@@ -1,4 +1,4 @@
-import { CreateButton, TopBar } from "./Components";
+import { ContentPanel, CreateButton, ProjectItem, TopBar } from "./Components";
 
 export function ProjectsTab() {
     return (
@@ -7,6 +7,25 @@ export function ProjectsTab() {
           <h1>Projects</h1>
           <CreateButton></CreateButton>
         </TopBar>
+        <ContentPanel>
+          <ProjectItem></ProjectItem>
+          <ProjectItem></ProjectItem>
+          <ProjectItem></ProjectItem>
+          <ProjectItem></ProjectItem>
+          <ProjectItem></ProjectItem>
+          <ProjectItem></ProjectItem>
+          <ProjectItem></ProjectItem>
+          <ProjectItem></ProjectItem>
+          <ProjectItem></ProjectItem>
+          <ProjectItem></ProjectItem>
+          <ProjectItem></ProjectItem>
+          <ProjectItem></ProjectItem>
+          <ProjectItem></ProjectItem>
+          <ProjectItem></ProjectItem>
+          <ProjectItem></ProjectItem>
+          <ProjectItem></ProjectItem>
+          <ProjectItem></ProjectItem>
+        </ContentPanel>
       </section>
     );
 }

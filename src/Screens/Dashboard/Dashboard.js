@@ -34,36 +34,34 @@ export function Dashboard(props) {
   return (
     <main>
       <MenuBar></MenuBar>
+      <Panel>{renderTab()}</Panel>
 
-     
-        <NavigationMenu>
-          <NavItem
-            onClick={() => showTab(Tabs.PROJECTS)}
-            state={activeTab === Tabs.PROJECTS ? "active" : ""}
-          >
-            Projects
-          </NavItem>
-          <NavItem
-            onClick={() => showTab(Tabs.EXPLORE)}
-            state={activeTab === Tabs.EXPLORE ? "active" : ""}
-          >
-            Explore
-          </NavItem>
-          <NavItem
-            onClick={() => showTab(Tabs.STORE)}
-            state={activeTab === Tabs.STORE ? "active" : ""}
-          >
-            Store
-          </NavItem>
-          <NavItem
-            onClick={() => showTab(Tabs.SETTINGS)}
-            state={activeTab === Tabs.SETTINGS ? "active" : ""}
-          >
-            Settings
-          </NavItem>
-        </NavigationMenu>
-        <Panel>{renderTab()}</Panel>
-    
+      <NavigationMenu>
+        <NavItem
+          onClick={() => showTab(Tabs.PROJECTS)}
+          state={activeTab === Tabs.PROJECTS ? "active" : ""}
+        >
+          Projects
+        </NavItem>
+        <NavItem
+          onClick={() => showTab(Tabs.EXPLORE)}
+          state={activeTab === Tabs.EXPLORE ? "active" : ""}
+        >
+          Explore
+        </NavItem>
+        <NavItem
+          onClick={() => showTab(Tabs.STORE)}
+          state={activeTab === Tabs.STORE ? "active" : ""}
+        >
+          Store
+        </NavItem>
+        <NavItem
+          onClick={() => showTab(Tabs.SETTINGS)}
+          state={activeTab === Tabs.SETTINGS ? "active" : ""}
+        >
+          Settings
+        </NavItem>
+      </NavigationMenu>
     </main>
   );
 }
