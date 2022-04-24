@@ -19,8 +19,8 @@
 
 
 
-@media screen and (max-width: 650px) {
-  main {
+@media screen and (max-width: 600px) {
+  .main {
     display: grid;
     grid-template:
       "menubar" 50px
@@ -47,7 +47,7 @@
     display: flex;
     flex-direction: row;
     height: calc(100vh - 50px);
-    
+    width: 100%;
   }
 
   nav {
@@ -74,9 +74,9 @@
 
   
  
-  .navItem .label {
+ .label {
     color: gray;
-    text-align: justify;
+    text-align: center;
   }
 
   .navItem:hover {
@@ -84,8 +84,8 @@
   }
 }
 
-@media screen and (min-width: 651px) { /*Desktop*/
-  main {
+@media screen and (min-width: 601px) { /*Desktop*/
+ .main {
     display: grid;
     grid-template:
       "menubar menubar menubar " 50px
@@ -113,6 +113,7 @@
   .panel {
     grid-area: panel;
     background-color: rgb(255, 255, 255);
+    width: 100%;
   }
 
    nav {
@@ -131,13 +132,14 @@
     display: flex;
     justify-content: center;
     
-    padding: auto;
   }
 
-  .navItem .label {
+  .label {
+    width: fit-content;
     color: gray;
-
-    text-align: justify;
+    text-align: start;
+    align-items: center;
+    margin: 0px 0px 0px 20px;
   }
 
   .navItem.active {

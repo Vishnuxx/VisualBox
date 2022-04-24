@@ -1,4 +1,4 @@
-import { NavigationMenu, NavItem, Panel , MenuBar } from "./Components";
+import { NavigationMenu, NavItem, Panel , MenuBar, DashboardPage } from "./Components";
 import React , { useState } from "react";
 import { ProjectsTab } from "./ProjectsTab/ProjectsTab";
 import { ExploreTab } from "./ExploreTab/ExploreTab";
@@ -32,7 +32,7 @@ export function Dashboard(props) {
   }
 
   return (
-    <main>
+    <DashboardPage>
       <MenuBar>
           
       </MenuBar>
@@ -64,6 +64,6 @@ export function Dashboard(props) {
           Settings
         </NavItem>
       </NavigationMenu>
-    </main>
+    </DashboardPage>
   );
 }

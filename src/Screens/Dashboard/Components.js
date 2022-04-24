@@ -1,5 +1,10 @@
 import styles from './dashboardstyles.module.css'
 
+export function DashboardPage(props) {
+  return <main className={styles.main}>
+  {props.children}
+  </main>
+}
 export function NavigationMenu(props) {
     return <nav>
      {props.children}

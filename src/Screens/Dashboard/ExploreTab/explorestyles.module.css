@@ -15,7 +15,7 @@
 }
 
 .topBar {
-  margin: 0;
+  margin:0;
   height: 50px;
   /* width: 100%; */
   display: flex;
@@ -51,19 +51,51 @@
 }
 
 .articlepane {
-    background-color: rgb(248, 248, 248);
+    background-color: rgb(245, 245, 245);
     height:calc(90vh - 50px) ;
-    display: block;
-    flex-flow: column;
-    align-items: center;
+    display: grid;
+    gap: 10px;
+    grid-row: 1;
+    grid-auto-flow: row;
+    justify-content: center;
+    align-items: flex-start;
     overflow-y: scroll;
+    padding-top: 20px;
 }
 
 .post {
-    width: 50vw;
-    height:200px;
-    background-color: rgb(121, 175, 223);
+    width: 60vw;
+    height:40vw;
+    box-shadow: 0 0 5px 3px rgb(230, 230, 230);
+    background-color: rgb(255, 255, 255);
     border-radius: 5px;
+    display: flex;
+    flex-flow: column;
+    overflow: hidden;
+
+    
+}
+
+.postThumb {
+  background-color: rgb(29, 38, 46);
+  height: 100% ;
+  width: 100%;
+}
+
+.postTitleContainer {
+  padding: 10px;
+}
+
+.postTitle {
+ text-align: start;
+}
+
+.postDescription {
+white-space: nowrap;
+ text-align: start;
+ text-overflow: ellipsis;
+ overflow: hidden;
+ color: rgb(71, 71, 71);
 }
 
 @media screen and (max-width: 600px) {
@@ -71,7 +103,7 @@
     display: flex;
     flex-flow: column;
     margin: 0;
-    padding: 0px 20px 0px 20px;
+    padding: 0px 20px 10px 20px;
     align-items: flex-start;
   
     height: fit-content;
@@ -83,6 +115,7 @@
     padding: 3px;
     width: 100%;
     text-align: start;
+    margin-bottom: 10px;
   }
 
   .searchbar {
@@ -96,4 +129,29 @@
     width: 100%;
     
   }
+
+  .articlepane {
+    background-color: rgb(245, 245, 245);
+    height:calc(80vh - 50px) ;
+    display: grid;
+    gap: 10px;
+    grid-row: 1;
+    grid-auto-flow: row;
+    justify-content: center;
+    overflow-y: scroll;
+    padding-top: 20px;
+    
+
 }
+
+  .post {
+    width : 90vw;
+    height: 90vw;
+    box-shadow: 0 0 5px 3px rgb(230, 230, 230);
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    display: flex;
+    flex-flow: column;
+}
+}
+ 
