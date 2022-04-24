@@ -1,8 +1,8 @@
-import { ContentPanel, CreateButton, ProjectItem, TopBar } from "./Components";
+import { ContentPanel, CreateButton, ProjectItem, ProjectsPage, TopBar } from "./Components";
 
 export function ProjectsTab() {
     return (
-      <section className="projectsTab">
+      <ProjectsPage>
         <TopBar>
           <h1>Projects</h1>
           <CreateButton></CreateButton>
@@ -26,6 +26,6 @@ export function ProjectsTab() {
           <ProjectItem></ProjectItem>
           <ProjectItem></ProjectItem>
         </ContentPanel>
-      </section>
+      </ProjectsPage>
     );
 }

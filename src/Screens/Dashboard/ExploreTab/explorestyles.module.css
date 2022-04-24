@@ -1,0 +1,99 @@
+@keyframes myAnim {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.explorePage {
+  height: 100%;
+  width:100%;
+  animation: myAnim 100ms ease 0s 1 normal forwards;
+}
+
+.topBar {
+  margin: 0;
+  height: 50px;
+  /* width: 100%; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: forwards;
+  transition: ease-in;
+  transition-delay: 1s;
+}
+
+.searchbar {
+  background-color: rgb(243, 243, 243);
+  padding: 5px;
+  width: fit-content;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  width: 250px;
+}
+
+.searchInput {
+  padding: 5px;
+  border: none;
+  outline: none;
+  width: 100%;
+  background-color: transparent;
+}
+
+.searchIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.articlepane {
+    background-color: rgb(248, 248, 248);
+    height:calc(90vh - 50px) ;
+    display: block;
+    flex-flow: column;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+.post {
+    width: 50vw;
+    height:200px;
+    background-color: rgb(121, 175, 223);
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  .topBar {
+    display: flex;
+    flex-flow: column;
+    margin: 0;
+    padding: 0px 20px 0px 20px;
+    align-items: flex-start;
+  
+    height: fit-content;
+    
+  }
+
+  .topBar h1 {
+    margin: 0;
+    padding: 3px;
+    width: 100%;
+    text-align: start;
+  }
+
+  .searchbar {
+    background-color: rgb(243, 243, 243);
+    margin: 0;
+    padding: 5px;
+    border-radius: 5px;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    width: 100%;
+    
+  }
+}

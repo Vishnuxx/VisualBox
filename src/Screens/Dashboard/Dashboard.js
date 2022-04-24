@@ -1,5 +1,5 @@
 import { NavigationMenu, NavItem, Panel , MenuBar } from "./Components";
-import { useState } from "react";
+import React , { useState } from "react";
 import { ProjectsTab } from "./ProjectsTab/ProjectsTab";
 import { ExploreTab } from "./ExploreTab/ExploreTab";
 import { StoreTab } from "./StoreTab/StoreTab";
@@ -33,7 +33,9 @@ export function Dashboard(props) {
 
   return (
     <main>
-      <MenuBar></MenuBar>
+      <MenuBar>
+          
+      </MenuBar>
       <Panel>{renderTab()}</Panel>
 
       <NavigationMenu>

@@ -1,3 +1,24 @@
+ .active {
+     background-color: rgb(228, 228, 228);
+    padding: auto;
+    font-weight: bold;
+    color: black;
+  }
+
+  .noSelect {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+
+
+
+
 @media screen and (max-width: 650px) {
   main {
     display: grid;
@@ -12,8 +33,13 @@
 
   .menubar {
     grid-area: menubar;
-    background-color: rgb(46, 42, 51);
     margin: 0;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0;
   }
 
   .panel {
@@ -46,15 +72,10 @@
     padding: auto;
   }
 
-  .navItem.active {
-    background-color: #f1f1f1;
-    border-top: 5px solid #8b56fc;
-    padding: auto;
-  }
-
+  
+ 
   .navItem .label {
     color: gray;
-
     text-align: justify;
   }
 
@@ -63,7 +84,7 @@
   }
 }
 
-@media screen and (min-width: 651px) {
+@media screen and (min-width: 651px) { /*Desktop*/
   main {
     display: grid;
     grid-template:
@@ -76,12 +97,17 @@
 
   .menubar {
     grid-area: menubar;
-    background-color: rgb(46, 42, 51);
     margin: 0;
     padding: 0;
     width: 100%;
+    display: flex;
+    flex-flow: row ;
+    align-items: center;
   }
 
+  .menubar h2 {
+    margin-left: 50px;
+  }
  
 
   .panel {

@@ -1,24 +1,31 @@
-.projectsTab {
- 
+@keyframes myAnim {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.page {
   width: 100%;
   display: flex;
   flex-flow: column;
-  height: calc(100vh - 50px)
-  
+  height: calc(100vh - 50px);
+  animation: myAnim 100ms ease 0s 1 normal forwards;
 }
 
-.content-panel {
-height: 100%;
+.content_panel {
+    height:calc(80vh - 50px) ;
     overflow-y: scroll;
-    overflow-x: hidden;
     display: grid;
     padding:20px;
     padding-bottom: 60px;
     gap: 4px;
      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-
-     
 }
+
 
 .menu {
   grid-area: menu;
@@ -31,7 +38,7 @@ height: 100%;
 }
  .createButton {
   border: none;
-  background-color: #35be4b;
+  background-color: #43be35;
   color: white;
   font-weight: bold;
   border-radius: 5px;
@@ -47,21 +54,10 @@ height: 100%;
 }
 
 
-.project-item {
+.project_item {
     width: 100%;
     height: 150px;
     background-color: rgb(176, 207, 234);
     border-radius: 5px;
 }
 
-/* @media (max-width: 600px) {
-
-  .projectsTab {
-      grid-template: 
-      "menu";
-  }
-
- 
-
-
-} */
