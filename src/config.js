@@ -1,4 +1,4 @@
 export const config = {
-  projectId: "6264368c2ce9ff1591b0",
+  projectId: "API_KEY",
   endpoint: "http://localhost/v1",
 };
