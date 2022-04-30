@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useRecoilState } from "recoil";
-import { selectedFrameIndex } from "../../../../../../Recoil/EditorRecoil";
+import { selectedFrameIndex } from "../../../../State/EditorRecoil";
 import style from "./frame.module.css";
 
 

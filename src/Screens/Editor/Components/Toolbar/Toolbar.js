@@ -1,6 +1,10 @@
 
+import { AddCircleButton } from "./Controls/AddCircleButton";
 import { AddImageButton } from "./Controls/AddImageButton";
+import { AddLineButton } from "./Controls/AddLineButton";
+import { AddRectangleButton } from "./Controls/AddRectangleButton";
 import { AddTextButton } from "./Controls/AddTextButton";
+import { AddTriangleButton } from "./Controls/AddTriangleButton";
 import { DrawButton } from "./Controls/DrawButton";
 import { EraseButton } from "./Controls/EraseButton";
 import { MultiSelectButton, } from "./Controls/MultiSelectButton";
@@ -18,6 +22,10 @@ export function ToolBar(props) {
     <AddTextButton></AddTextButton>
     <DrawButton></DrawButton>
     <EraseButton></EraseButton>
-    
+    <AddLineButton></AddLineButton>
+    <AddCircleButton></AddCircleButton>
+    <AddTriangleButton></AddTriangleButton>
+    <AddRectangleButton></AddRectangleButton>
+
   </section>;
 }

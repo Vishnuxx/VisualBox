@@ -1,5 +1,6 @@
 @media screen and (orientation: portrait) {
   .menu {
+    display: flex;
     margin: 0;
     position: absolute;
     height: 50px;
@@ -7,11 +8,14 @@
     top: 0;
     right: 0;
     background-color: rgb(255, 255, 255);
+    cursor: pointer;
   }
 }
 
 @media screen and (orientation: landscape) {
   .menu {
+     display: flex;
+     justify-content: center;
     margin: 0;
     position: absolute;
     height: 50px;
@@ -19,5 +23,6 @@
     top: 0;
     right: 0;
     background-color: rgb(255, 255, 255);
+    cursor: pointer;
   }
 }

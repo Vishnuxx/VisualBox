@@ -1,0 +1,28 @@
+.iconButton {
+    width: 30px;
+    height:30px;
+    overflow: hidden;
+    padding: 5px;
+}
+
+.iconButton:hover {
+    background-color: rgb(235, 233, 233);
+}
+
+
+.icon {
+    height: 20px;
+    width: 20px;
+}
+
+.label {
+    text-align: center;
+    height:5px;
+    width:30px;
+    font-size: small;
+    color: grey;
+    margin: 0;
+    margin-top: 1px;
+}
+
+

@@ -1,18 +1,11 @@
-import BroadCast from "./Broadcast/Broadcast.js";
+import BroadCast from "../../../Models/Broadcast/Broadcast.js";
 import { fabric } from "fabric";
 
 export function EditorModel() {
 
   var frameIndex = 0;
 
-  this.canvas = new fabric.Canvas("canvas", {
-    height: 200,
-    width: 400,
-    fireRightClick: true,
-    fireMiddleClick: true,
-    stopContextMenu: true,
-    backgroundColor: "white",
-  });
+  this.canvas = null;
   this.name = "vishnu";
   this.width = 500;
   this.height = 300;

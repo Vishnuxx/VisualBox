@@ -3,15 +3,22 @@
     grid-area: toolbar;
     margin: 0;
     padding: 0;
+    width:100vw;
+    max-height: 40%;
+    overflow-x: scroll;
+
     background-color: rgb(255, 255, 255);
     height: fit-content;
-    width: fit-content;
+    
     position: absolute;
     box-shadow: 0 0 5px 3px rgb(211, 211, 211);
     border-radius: 5px;
     display: flex;
+    flex-flow: row;
+    bottom: 0;
     align-items: center;
-    overflow: hidden;
+    
+    z-index: 2;
     
   }
 }
@@ -19,16 +26,30 @@
 @media screen and (orientation: landscape) {
   .toolbar {
     grid-area: toolbar;
+    display: flex;
+    flex-flow: column;
+
     margin: 0;
     padding: 0;
     background-color: rgb(255, 255, 255);
-    height: fit-content;
+    height: 80vh;
+    /* max-height: 80%; */
     width: fit-content;
     position: absolute;
-    box-shadow: 0 0 5px 3px rgb(211, 211, 211);
+    box-shadow: 0 0 2px 1px rgb(230, 230, 230);
     border-radius: 5px;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
+    
+    overflow: scroll;
   }
+}
+
+
+.toolbar {
+  user-select: none;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.toolbar::-webkit-scrollbar {
+  display: none;
 }

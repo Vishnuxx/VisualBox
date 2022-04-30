@@ -1,13 +1,19 @@
 
-import { useRecoilState } from "recoil";
-import { frames } from "../../../../Recoil/EditorRecoil";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { Editor, frames } from "../../State/EditorRecoil";
+import { ExportButton } from "./Components/ExportButton";
+import { RedoButton } from "./Components/RedoButton";
+import { UndoButton } from "./Components/UndoButton";
 import style from "./menubar.module.css";
 
 
 export function MenuBar(props) {
-  const [frame , setFrame] = useRecoilState(frames)
   
   return (
-    <menu className={style.menu}></menu>
+    <main className={style.menu}>
+      <UndoButton></UndoButton>
+      <RedoButton></RedoButton>
+      <ExportButton></ExportButton>
+    </main>
   );
 }
