@@ -1,0 +1,25 @@
+@media screen and (max-width: 600px) {
+  .menubar {
+    grid-area: menubar;
+    margin: 0;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0px;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .menubar {
+    grid-area: menubar;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    
+  }
+}

@@ -1,4 +1,4 @@
-import styles from './dashboardstyles.module.css'
+import styles from './dashboard.module.css'
 
 export function DashboardPage(props) {
   return <main className={styles.main}>

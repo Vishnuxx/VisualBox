@@ -1,0 +1,40 @@
+.frame {
+  min-width: 80px;
+  max-width: 80px;
+  height: 60px;
+  background-color: rgb(247, 247, 247);
+  border: 1px solid grey;
+  border-radius: 5px;
+  position: relative;
+  margin-right: 10px;
+}
+
+.activeFrame {
+  border: 3px solid #ffb405;
+}
+
+.frameNumber {
+  width: fit-content;
+  min-width: 20px;
+  min-height: 20px;
+  background-color: rgb(231, 231, 231);
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  padding: 1px;
+  margin: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  font-size: 9px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+}
+
+.activeFrameNumber {
+  background-color: #6d05ff;
+  color: white;
+  font-weight: bold;
+}

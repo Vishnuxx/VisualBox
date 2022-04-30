@@ -1,19 +1,24 @@
-import { EditingFrame, EditorPage, Frame, MenuBar, Timeline, ToolBar } from "./Components";
+import style from "./editor.module.css";
+
+import { Timeline } from "./Components/Timeline/Timeline";
+import { ToolBar } from "./Components/Toolbar/Toolbar";
+import { MenuBar } from "./Components/Menubar/Menubar";
+import { EditingFrame } from "./Components/EditingFrame/EditingFrame";
+
+
+import { RecoilRoot } from "recoil";
+
 
 export function EditorScreen(props) {
-    return (
-      <EditorPage>
-        <MenuBar></MenuBar>
+  
+  return (
+    <RecoilRoot>
+      <main className={style.main}>
+        <EditingFrame />
+        <MenuBar />
         <ToolBar></ToolBar>
-        <EditingFrame></EditingFrame>
-        <Timeline>
-          <Frame frameNumber="1" isActive={true}></Frame>
-          <Frame frameNumber="2" isActive={false}></Frame>
-          <Frame frameNumber="3" isActive={false}></Frame>
-          <Frame frameNumber="4" isActive={false}></Frame>
-          <Frame frameNumber="5" isActive={false}></Frame>
-          <Frame frameNumber="6" isActive={false}></Frame>
-        </Timeline>
-      </EditorPage>
-    );
+        <Timeline />
+      </main>
+    </RecoilRoot>
+  );
 }

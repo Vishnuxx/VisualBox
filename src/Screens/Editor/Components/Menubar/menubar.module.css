@@ -1,0 +1,23 @@
+@media screen and (orientation: portrait) {
+  .menu {
+    margin: 0;
+    position: absolute;
+    height: 50px;
+    width: 100vw;
+    top: 0;
+    right: 0;
+    background-color: rgb(255, 255, 255);
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .menu {
+    margin: 0;
+    position: absolute;
+    height: 50px;
+    width: 100vw;
+    top: 0;
+    right: 0;
+    background-color: rgb(255, 255, 255);
+  }
+}

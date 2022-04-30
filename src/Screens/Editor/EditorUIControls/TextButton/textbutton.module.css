@@ -1,0 +1,11 @@
+.textButton {
+    user-select: none;
+    min-width: 10px;
+    min-height: 10px;
+    cursor: pointer;
+    font-size: small;
+}
+
+.textButton:hover {
+    color: green;
+}

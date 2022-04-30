@@ -1,9 +1,12 @@
-import { NavigationMenu, NavItem, Panel , MenuBar, DashboardPage } from "./Components";
+import { NavItem , DashboardPage, Panel } from "./Components";
 import React , { useState } from "react";
 import { ProjectsTab } from "./ProjectsTab/ProjectsTab";
 import { ExploreTab } from "./ExploreTab/ExploreTab";
 import { StoreTab } from "./StoreTab/StoreTab";
 import { SettingsTab } from "./SettingsTab/SettingsTab";
+import { MenuBar } from "./Components/MenuBar/Menubar";
+
+import { NavigationMenu } from "./Components/NavigationMenu/NavigationMenu";
 
 
 export function Dashboard(props) {
@@ -27,38 +30,36 @@ export function Dashboard(props) {
     }
   }
 
-  function showTab(tab) {
+  function setTab(tab) {
     setactiveTab(tab);
   }
 
   return (
     <DashboardPage>
-      <MenuBar>
-          
-      </MenuBar>
+      <MenuBar/>
       <Panel>{renderTab()}</Panel>
 
       <NavigationMenu>
         <NavItem
-          onClick={() => showTab(Tabs.PROJECTS)}
+          onClick={() => setTab(Tabs.PROJECTS)}
           state={activeTab === Tabs.PROJECTS ? "active" : ""}
         >
           Projects
         </NavItem>
         <NavItem
-          onClick={() => showTab(Tabs.EXPLORE)}
+          onClick={() => setTab(Tabs.EXPLORE)}
           state={activeTab === Tabs.EXPLORE ? "active" : ""}
         >
           Explore
         </NavItem>
         <NavItem
-          onClick={() => showTab(Tabs.STORE)}
+          onClick={() => setTab(Tabs.STORE)}
           state={activeTab === Tabs.STORE ? "active" : ""}
         >
           Store
         </NavItem>
         <NavItem
-          onClick={() => showTab(Tabs.SETTINGS)}
+          onClick={() => setTab(Tabs.SETTINGS)}
           state={activeTab === Tabs.SETTINGS ? "active" : ""}
         >
           Settings

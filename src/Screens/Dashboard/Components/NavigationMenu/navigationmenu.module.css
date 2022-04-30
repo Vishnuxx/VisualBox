@@ -1,0 +1,26 @@
+@media screen and (max-width: 600px) {
+   .nav {
+    grid-area: nav;
+    display: flex;
+    flex-flow: row;
+    height: 50px;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    border-top: 1px solid #dddddd;
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .nav {
+    grid-area: nav;
+    display: flex;
+    flex-flow: column;
+    width: 200px;
+    border-right: 1px solid #dddddd;
+    z-index: 1;
+  }
+}

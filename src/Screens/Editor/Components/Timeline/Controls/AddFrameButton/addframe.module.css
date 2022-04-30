@@ -1,0 +1,24 @@
+.addFrameButton {
+    min-width : 40px;
+    min-height:40px;
+    width : 40px;
+    height:40px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid rgb(195, 195, 195);
+    font-size: small;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addFrameButton:hover {
+    border: 2px solid rgb(4, 205, 4);
+    color: rgb(8, 203, 8);
+}
+.addFrameButton:active {
+    border: 1px solid rgb(4, 205, 4);
+    color: rgb(8, 203, 8);
+    scroll-behavior: smooth;
+}
