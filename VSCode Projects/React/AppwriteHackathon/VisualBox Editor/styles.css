@@ -1,0 +1,46 @@
+body { 
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    color: rgb(0, 0, 0);
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+}
+
+.toolbar {
+  position: absolute;
+  left: 0;
+  height: 300px;
+  width: 80px;
+  background-color: rgb(181, 181, 181);
+  border-radius: 5px;
+  align-self: center;
+}
+
+.editor {
+ width: 80vw;
+ height: 80vh;
+background-color: rgb(255, 255, 255);
+box-shadow: 0 0 2px 0px grey;
+}
+
+.timeline {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 80px;
+  background: aliceblue;
+  border-top: 1px solid rgb(201, 201, 201);
+}
+
+.layers {
+  position: absolute;
+  right: 0;
+  width: 100px;
+  height: 300px;
+  background-color: aliceblue;
+  align-self: center;
+}
