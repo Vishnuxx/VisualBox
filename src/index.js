@@ -5,17 +5,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-//root.requestFullscreen();
-
-  if (root.requestFullscreen) {
-    root.requestFullscreen();
-  } else if (root.webkitRequestFullscreen) {
-    /* Safari */
-    root.webkitRequestFullscreen();
-  } else if (root.msRequestFullscreen) {
-    /* IE11 */
-    root.msRequestFullscreen();
-  }
 
 root.render(
   <>

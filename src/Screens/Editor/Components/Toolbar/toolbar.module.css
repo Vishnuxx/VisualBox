@@ -17,11 +17,13 @@
     flex-flow: row;
     bottom: 0;
     align-items: center;
-    
+    position: fixed;
     z-index: 2;
-    
+    image-rendering: high-quality;
   }
 }
+
+
 
 @media screen and (orientation: landscape) {
   .toolbar {
@@ -32,7 +34,7 @@
     margin: 0;
     padding: 0;
     background-color: rgb(255, 255, 255);
-    height: fit;
+    height: 60vh;
     /* max-height: 80%; */
     width: fit-content;
     position: absolute;

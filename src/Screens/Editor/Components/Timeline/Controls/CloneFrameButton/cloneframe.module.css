@@ -1,11 +1,11 @@
-.addFrameButton {
+.cloneFrameButton {
     width : 30px;
     height:30px;
    
     margin: 2px;
     background-color: white;
     border-radius: 5px;
-    border: 1px solid rgb(195, 195, 195);
+    outline: 1px solid rgb(195, 195, 195);
     font-size: small;
     font-weight: bold;
     display: flex;
@@ -14,11 +14,11 @@
     user-select: none;
 }
 
-.addFrameButton:hover {
+.cloneFrameButton:hover {
     border: 2px solid rgb(4, 205, 4);
     color: rgb(8, 203, 8);
 }
-.addFrameButton:active {
+.cloneFrameButton:active {
      user-select: none;
     border: 1px solid rgb(4, 205, 4);
     color: rgb(8, 203, 8);

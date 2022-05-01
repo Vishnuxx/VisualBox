@@ -5,6 +5,7 @@ export function EditorModel() {
   this.frameIndex = 0;
 
   this.canvas = null;
+  this.player = null;
   this.width = 500;
   this.height = 300;
   this.frames = []; //stores all frames

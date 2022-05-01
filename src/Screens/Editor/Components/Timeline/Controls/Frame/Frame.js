@@ -12,7 +12,7 @@ export function Frame(props) {
     const scrollTo = (ev) => {
       ev.scrollIntoView({
         behavior: "smooth",
-        block: "center",
+        block: "nearest",
         inline: "center",
       });
     }

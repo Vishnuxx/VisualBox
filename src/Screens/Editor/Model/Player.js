@@ -1,7 +1,8 @@
 function Player(editor) {
     var currentFrameNumber = 0;
-    var frameCount = this.editor.frames.length - 1;
+    var frameCount = editor.frames.length - 1;
     var timer;
+    editor.player = this;
     this.editor = editor;
     this.loop = false;
     this.fps = 12;

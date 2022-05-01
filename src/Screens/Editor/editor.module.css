@@ -8,6 +8,7 @@
     flex-flow: column;
     justify-content: center;
     overflow: hidden;
+    position: relative;
   }
 }
 

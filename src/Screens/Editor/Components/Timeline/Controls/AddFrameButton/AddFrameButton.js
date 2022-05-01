@@ -2,6 +2,8 @@ import { useRecoilValue, useSetRecoilState } from "recoil";
 import { addFrame, Editor, framesListState, selectedFrameIndex } from "../../../../State/EditorRecoil";
 import { TextButton } from "../../../../EditorUIControls/TextButton/TextButton";
 import style from './addframe.module.css';
+import newFrame from '../Assets/addFrame.png'
+
 
 export function AddFrameButton(props) {
     const editor = useRecoilValue(Editor);
@@ -15,7 +17,12 @@ export function AddFrameButton(props) {
     
     return (
       <div className={style.addFrameButton} onClick={() => addFrameToEditor()}>
-        <TextButton>+</TextButton>
+        <TextButton>
+          <img
+            src="https://img.icons8.com/plumpy/24/000000/add--v1.png"
+            alt=""
+          />
+        </TextButton>
       </div>
     );
 }

@@ -14,7 +14,15 @@ export const framesListState = atom({
   // dangerouslyAllowMutability: true,
 });
 
+export const isLoopingState = atom({
+  key: "isLoopingState",
+  default: false,
+});
 
+export const isPlayingState = atom({
+  key: "isPlayingState",
+  default: false,
+});
 
 export const selectedFrameIndex = atom({
     key: "selectedframeIndex",

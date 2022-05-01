@@ -17,21 +17,22 @@
 @media screen and (orientation: portrait) {
   .timeline {
     grid-area: timeline;
-    overflow-x: scroll;
     display: flex;
     flex-flow: row;
     align-items: center;
-    position: absolute;
-    bottom: 50px;
-    right: 0;
-    left: 0;
+    height: 70px;
+    width: 100vw;
+    padding: 0px;
     margin-left: auto;
     margin-right: auto;
+    position: fixed;
+    bottom: 100px;
+    right: 0;
+    left: 0;
     background-color: rgb(255, 255, 255);
-    height: 70px;
-    padding: 0px;
-    width: 100vw;
     border-radius: 10px;
+    overflow-x: scroll;
+    overflow-y: hidden;
   }
 }
 @media screen and (orientation: landscape) {

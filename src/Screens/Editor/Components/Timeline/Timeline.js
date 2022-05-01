@@ -3,6 +3,7 @@ import { Frame } from "./Controls/Frame/Frame";
 import { useRecoilValue } from "recoil";
 import { Editor, framesListState } from "../../State/EditorRecoil";
 import { AddFrameButton } from "./Controls/AddFrameButton/AddFrameButton";
+import { CloneFrameButton } from "./Controls/CloneFrameButton/CloneFrameButton";
 
 export function Timeline(props) {
   const editor = useRecoilValue(Editor);
@@ -10,15 +11,22 @@ export function Timeline(props) {
   return (
     <section className={style.timeline}>
       <div className={style.framesContainer}>
-        {framess.map((val , index) => {
+        {framess.map((val, index) => {
           return (
             <Frame key={index} frameNumber={index}>
-              <img style={{width:"75px" , height:"50px"}} src={editor.getFrame(index).thumb()} alt="thumb" />
+              <img
+                style={{ width: "75px", height: "50px" }}
+                src={editor.getFrame(index).thumb()}
+                alt="thumb"
+              />
             </Frame>
           );
         })}
       </div>
-      <AddFrameButton></AddFrameButton>
+      <div>
+        <AddFrameButton></AddFrameButton>
+        <CloneFrameButton></CloneFrameButton>
+      </div>
     </section>
   );
 }

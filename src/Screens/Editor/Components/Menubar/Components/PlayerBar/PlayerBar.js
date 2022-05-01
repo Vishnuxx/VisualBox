@@ -4,20 +4,35 @@ import pauseicon from './Assets/pause.png'
 import stopicon from './Assets/stop.png'
 import skipstarticon from './Assets/skipstart.png'
 import loopicon from './Assets/loopicon.png'
+import { useRecoilState, useRecoilValue } from 'recoil'
+import { Editor, isLoopingState, isPlayingState } from '../../../../State/EditorRecoil'
 
 
 
 export default function PlayerBar(props) {
     return <div className={style.playerbar}>
         <SkipStartButton></SkipStartButton>
-        <PlayButton></PlayButton>
+        <PlayPauseButton></PlayPauseButton>
         <StopButton></StopButton>
         <LoopButton></LoopButton>
     </div>
 }
 
-function PlayButton(props) {
-    return <img className={style.icon} src={playicon} alt="playicon" />;
+function PlayPauseButton(props) {
+    const editor = useRecoilValue(Editor);
+    const [isPlaying, startPlaying] = useRecoilState(isPlayingState);
+    const click = () => {
+      //editor.player.isLooping = !editor.player.isLooping;
+      startPlaying(!isPlaying);
+    };
+    return (
+      <img
+        className={`${style.icon} ${isPlaying ? style.active : ""}`}
+        src={isPlaying ? pauseicon :  playicon}
+        onClick={click}
+        alt="playpauseicon"
+      />
+    );
 }
 
 function PauseButton(props) {
@@ -33,5 +48,11 @@ function SkipStartButton(props) {
 }
 
 function LoopButton(props) {
-  return <img className={style.icon} src={loopicon} alt="loopButton" />;
+    const editor = useRecoilValue(Editor);
+    const [isLooping , setLooping] = useRecoilState(isLoopingState);
+    const click = () => {
+        editor.player.isLooping = !editor.player.isLooping
+        setLooping(editor.player.isLooping);
+    }
+  return <img className={`${style.icon} ${(isLooping)? style.active : ""}`} src={loopicon} onClick={click} alt="loopButton" />;
 }

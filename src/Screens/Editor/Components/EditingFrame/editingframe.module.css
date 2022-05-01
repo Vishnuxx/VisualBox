@@ -1,6 +1,6 @@
 @media screen and (orientation: portrait) {
   .editingFrame {
-    grid-area: frame;
+    /* grid-area: frame; */
     background-color: aliceblue;
     width: 100vw;
     height: 100vh;

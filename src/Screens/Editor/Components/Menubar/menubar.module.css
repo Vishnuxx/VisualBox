@@ -7,8 +7,8 @@
     height: 50px;
     width: 100vw;
     top: 0;
-    right: 0;
-    background-color: rgb(255, 255, 255);
+  
+    /* background-color: rgb(255, 255, 255); */
      box-shadow: 0 0 2px 1px rgb(230, 230, 230);
     cursor: pointer;
   }

@@ -3,14 +3,13 @@
     grid-area: toolbar;
     margin: 0;
     padding: 0;
-    width:50px;
+    width:100vw;
     overflow-x: scroll;
-    right:0;
+    bottom:50px;
     background-color: rgb(255, 255, 255);
-    height: 60vh;
-    
-    position: absolute;
-    box-shadow: 0 0 5px 3px rgb(211, 211, 211);
+    height: 50px;
+    position: fixed;
+     box-shadow: 0 0 2px 1px rgb(230, 230, 230);
     border-radius: 5px;
     display: flex;
     flex-flow: row;
@@ -32,9 +31,9 @@
     padding: 0;
     background-color: rgb(255, 255, 255);
     height: 80vh;
-    width: 200px;
+    width: 50px;
     position: absolute;
-    box-shadow: 0 0 2px 1px rgb(230, 230, 230);
+     box-shadow: 0 0 2px 1px rgb(230, 230, 230);
     border-radius: 5px;
     
     overflow: scroll;
