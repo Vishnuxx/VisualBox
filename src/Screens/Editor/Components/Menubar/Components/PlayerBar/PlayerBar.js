@@ -13,7 +13,6 @@ export default function PlayerBar(props) {
     return <div className={style.playerbar}>
         <SkipStartButton></SkipStartButton>
         <PlayPauseButton></PlayPauseButton>
-        <StopButton></StopButton>
         <LoopButton></LoopButton>
     </div>
 }
@@ -33,14 +32,6 @@ function PlayPauseButton(props) {
         alt="playpauseicon"
       />
     );
-}
-
-function PauseButton(props) {
-  return <img className={style.icon} src={pauseicon} alt="pauseicon" />;
-}
-
-function StopButton(props) {
-  return <img className={style.icon} src={stopicon} alt="stopicon" />;
 }
 
 function SkipStartButton(props) {
