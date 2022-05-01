@@ -7,6 +7,7 @@ import { EditingFrame } from "./Components/EditingFrame/EditingFrame";
 
 
 import { RecoilRoot } from "recoil";
+import { PropertyBar } from "./Components/PropertyBar/PropertyBar";
 
 
 export function EditorScreen(props) {
@@ -18,6 +19,7 @@ export function EditorScreen(props) {
         <MenuBar />
         <ToolBar></ToolBar>
         <Timeline />
+        <PropertyBar></PropertyBar>
       </main>
     </RecoilRoot>
   );

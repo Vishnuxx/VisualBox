@@ -1,21 +1,20 @@
 @media screen and (orientation: portrait) {
-  .toolbar {
+  .propertybar {
     grid-area: toolbar;
     margin: 0;
     padding: 0;
-    width:100vw;
-    max-height: 40%;
+    width:50px;
     overflow-x: scroll;
-
+    right:0;
     background-color: rgb(255, 255, 255);
-    height: fit-content;
+    height: 60vh;
     
     position: absolute;
-     box-shadow: 0 0 2px 1px rgb(230, 230, 230);
+    box-shadow: 0 0 5px 3px rgb(211, 211, 211);
     border-radius: 5px;
     display: flex;
     flex-flow: row;
-    bottom: 0;
+
     align-items: center;
     
     z-index: 2;
@@ -24,17 +23,16 @@
 }
 
 @media screen and (orientation: landscape) {
-  .toolbar {
+  .propertybar {
     grid-area: toolbar;
     display: flex;
     flex-flow: column;
-
+    right:0;
     margin: 0;
     padding: 0;
     background-color: rgb(255, 255, 255);
-    height: fit-content;
-    /* max-height: 80%; */
-    width: fit-content;
+    height: 80vh;
+    width: 200px;
     position: absolute;
     box-shadow: 0 0 2px 1px rgb(230, 230, 230);
     border-radius: 5px;
@@ -44,12 +42,12 @@
 }
 
 
-.toolbar {
+.propertybar {
   user-select: none;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
 
-.toolbar::-webkit-scrollbar {
+.propertybar::-webkit-scrollbar {
   display: none;
 }

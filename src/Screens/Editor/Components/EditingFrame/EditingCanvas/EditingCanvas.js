@@ -1,8 +1,8 @@
 import style from "./editingcanvas.module.css";
 import { fabric } from "fabric";
 import { useCallback, useRef } from "react";
-import {  useSetRecoilState } from "recoil";
-import { Canvas, Editor } from "../../../State/EditorRecoil";
+import {  useRecoilValue, useSetRecoilState } from "recoil";
+import { addFrame, Canvas, Editor, framesListState } from "../../../State/EditorRecoil";
 import { EditorModel } from "../../../Model/EditorModel";
 
 fabric.Object.prototype.set({
@@ -13,15 +13,14 @@ fabric.Object.prototype.set({
 });
 
 export function EditingCanvas(props) {
-  const setEditor = useSetRecoilState(Editor);
-  const setCanvas = useSetRecoilState(Canvas);
   const canvasref = useRef(null);
+  const setEditor = useSetRecoilState(Editor);
+  const setFrameListState = useSetRecoilState(framesListState);
+
 
   const fabricRef = useCallback((element) => {
     if (!element) return canvasref.current?.dispose();
-
-    const editorModel = new EditorModel();
-
+    const editor = new EditorModel();
     canvasref.current = new fabric.Canvas("canvas", {
       height: 400,
       width: 600,
@@ -30,13 +29,10 @@ export function EditingCanvas(props) {
       stopContextMenu: true,
       backgroundColor: "white",
     });
-
-    
-    
-    //setCanvas(canvasref.current);
-    setEditor(editorModel);
-    editorModel.canvas = canvasref.current;
-    console.log(editorModel.canvas);
+    setEditor(editor);
+    editor.canvas = canvasref.current;
+    editor.addFrame();
+    setFrameListState([...editor.frames]);
   }, []);
 
   return <canvas id="canvas" ref={fabricRef} className={style.canvas}></canvas>;
