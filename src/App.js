@@ -8,6 +8,7 @@ import { EditorScreen } from './Screens/Editor/EditorScreen';
 
 
 function App() {
+  
   console.log('app')
   return (
     <Router>

@@ -22,8 +22,8 @@ export function EditingCanvas(props) {
     if (!element) return canvasref.current?.dispose();
     const editor = new EditorModel();
     canvasref.current = new fabric.Canvas("canvas", {
-      height: 400,
-      width: 600,
+      height: 0,
+      width: 0,
       fireRightClick: true,
       fireMiddleClick: true,
       stopContextMenu: true,

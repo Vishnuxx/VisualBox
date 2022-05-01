@@ -4,6 +4,7 @@
     
     padding: 5px;
     color: grey;
+    user-select: none;
    
 }
 

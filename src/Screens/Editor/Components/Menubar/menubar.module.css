@@ -1,6 +1,7 @@
 @media screen and (orientation: portrait) {
   .menu {
     display: flex;
+    align-items: center;
     margin: 0;
     position: absolute;
     height: 50px;
@@ -16,6 +17,7 @@
 @media screen and (orientation: landscape) {
   .menu {
      display: flex;
+      align-items: center;
      justify-content: center;
     margin: 0;
     position: absolute;
