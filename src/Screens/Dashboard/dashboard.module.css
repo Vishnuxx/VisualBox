@@ -15,8 +15,36 @@
     user-select: none;
   }
 
+.icon {
+  width:24px;
+  height: 24px;
+}
 
 
+.searchbar {
+  background-color: #ebebeb;
+  padding: 5px;
+  width: fit-content;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  width: 250px;
+}
+
+
+  .searchInput {
+  padding: 5px;
+  border: none;
+  outline: none;
+  width: 100%;
+  background-color: transparent;
+}
+
+.searchIcon {
+  width: 20px;
+  height: 20px;
+}
 
 
 @media screen and (max-width: 600px) {
@@ -35,12 +63,30 @@
     grid-area: menubar;
     margin: 0;
     display: flex;
-    flex-flow: column;
-    justify-content: center;
+    flex-flow: row;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
     padding: 0;
+      box-shadow: 0 0 2px 1px rgb(230, 230, 230);
   }
+
+  .searchbar {
+ background-color: transparent;
+ width: fit-content;
+ height: fit-content;
+ padding: 0px;
+
+}
+
+  .searchInput {
+  display: none;
+}
+
+.searchIcon {
+  width: 20px;
+  height: 20px;
+}
 
   .panel {
     grid-area: panel;
@@ -50,7 +96,7 @@
     width: 100%;
   }
 
-  nav {
+  .nav {
     grid-area: nav;
     display: flex;
     flex-flow: row;
@@ -68,8 +114,11 @@
     width: 100%;
     cursor: pointer;
     display: flex;
+    flex-flow: column;
+    align-items: center;
     justify-content: center;
-    padding: auto;
+    padding: 3px;
+    border-radius: 5px;
   }
 
   
@@ -77,6 +126,8 @@
  .label {
     color: gray;
     text-align: center;
+    margin:0;
+    font-size: small;
   }
 
   .navItem:hover {
@@ -84,15 +135,20 @@
   }
 }
 
-@media screen and (min-width: 601px) { /*Desktop*/
+
+
+
+ /*Desktop*/
+
+@media screen and (min-width: 601px) {
  .main {
     display: grid;
     grid-template:
       "menubar menubar menubar " 50px
-      "nav  panel panel" calc(100vh - 50px)
-      / 200px 1fr 1fr;
+      "nav  panel panel" 100vh
+      / 80px 1fr 1fr;
     height: 100vh;
-    
+    background-color: #F9F9F9;
     
   }
 
@@ -103,7 +159,10 @@
     width: 100%;
     display: flex;
     flex-flow: row ;
+    justify-content: center;
     align-items: center;
+     box-shadow: 0 0 2px 1px rgb(230, 230, 230);
+     z-index: 1;
   }
 
   .menubar h2 {
@@ -113,34 +172,39 @@
 
   .panel {
     grid-area: panel;
-    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(255, 255, 255); */
     width: 100%;
   }
 
-   nav {
+   .nav {
     grid-area: nav;
     display: flex;
     flex-flow: column;
-    width: 200px;
     border-right: 1px solid #dddddd;
-    z-index: 1;
+    align-items: center;
+    padding-top: 50px;
   }
 
   .navItem {
-    width: 100%;
+    display: flex;
+    flex-flow: column;
+    width: 50px;
     cursor: pointer;
     height: 50px;
-    display: flex;
     justify-content: center;
-    
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
   }
 
   .label {
     width: fit-content;
     color: gray;
-    text-align: start;
+   
     align-items: center;
-    margin: 0px 0px 0px 20px;
+    margin: 0px;
+font-size: small;
+
   }
 
   .navItem.active {
@@ -151,6 +215,6 @@
 
 
   .navItem:hover {
-    background-color: rgb(228, 228, 228);
+    background-color: #e4e4e4;
   }
 }

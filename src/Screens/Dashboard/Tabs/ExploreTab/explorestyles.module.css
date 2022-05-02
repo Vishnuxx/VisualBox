@@ -55,23 +55,23 @@
     height:calc(90vh - 50px) ;
     display: grid;
     gap: 10px;
-    grid-row: 1;
-    grid-auto-flow: row;
-    justify-content: center;
-    align-items: flex-start;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    justify-content: space-around;
+    align-items: center;
     overflow-y: scroll;
     padding-top: 20px;
 }
 
 .post {
-    width: 60vw;
-    height:40vw;
+    height: 100%;
     box-shadow: 0 0 5px 3px rgb(230, 230, 230);
     background-color: rgb(255, 255, 255);
     border-radius: 5px;
     display: flex;
     flex-flow: column;
+  
     overflow: hidden;
+  
 
     
 }

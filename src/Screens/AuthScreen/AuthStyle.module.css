@@ -6,7 +6,15 @@
     width: 100vw;
     height: 100vh; 
     padding: 0;
+    overflow-y:scroll;
     
+}
+
+.title {
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    width: 100%;
 }
 
 section {
@@ -27,9 +35,9 @@ form {
     flex-flow: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
-    width: 300px;
+    width: 250px;
     height: 400px;
+    box-sizing: border-box;
     
 }
 
@@ -60,32 +68,51 @@ form {
     color: grey;
 }
 
+.inputHolder {
+    margin-top:20px;
+    background-color: #efefef;
+    padding: 10px 0px;
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px 10px;
+}
+
 .input {
     display: flex;
-    background-color: #f4f0f1;
-    border: 0;
-    border-radius: 0.4rem;
+    border: none;
     color: #000a47;
     font-size: 1rem;
     outline: 0;
-    padding: 10px;
-    margin-top:30px;
+    background-color: transparent;
+    position: relative;
     width: 100%;
-  
 }
 
 .submit {
-    background-color:#a378ff ;
+    background-color:#2D333E;
     border: 0;
     border-radius: 0.4rem;
     width: 100%;
     margin-top: 40px;
     color: white;
-    padding: 15px;
+   
+    padding: 15px 50px;
 
 }
 
 .submit:hover {
-    background-color:#773cf3 ;
+    background-color:#535867 ;
 }
 
+@media screen and (max-width: 600px) {
+    form {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    width: 80vw;
+    height: 400px;
+    box-sizing: border-box;
+    
+}
+}

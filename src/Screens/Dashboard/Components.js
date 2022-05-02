@@ -5,8 +5,10 @@ export function DashboardPage(props) {
   {props.children}
   </main>
 }
+
+
 export function NavigationMenu(props) {
-    return <nav>
+    return <nav className={styles.nav}>
      {props.children}
     </nav>
 }
@@ -19,7 +21,8 @@ export function NavItem(props) {
         } ${styles.noSelect} `}
         onClick={props.onClick}
       >
-        <p className={styles.label}>{props.children}</p>
+        <img className={styles.icon} src={props.icon}></img>
+        <p className={styles.label}>{props.label}</p>
       </section>
     );
 }
@@ -35,8 +38,25 @@ export function Panel(props) {
 export function MenuBar(props) {
     return (
       <menu className={styles.menubar}>
-        <h2>VisualBox</h2>
+        <h3>VisualBox</h3>
         {props.children}
       </menu>
     );
+}
+
+export function SearchBar(props) {
+  return (
+    <div className={styles.searchbar}>
+      <input
+        type="text"
+        placeholder="Search here"
+        className={styles.searchInput}
+      />
+      <img
+        src="https://img.icons8.com/plumpy/24/000000/search--v1.png"
+        alt="search"
+        className={styles.searchIcon}
+      />
+    </div>
+  );
 }

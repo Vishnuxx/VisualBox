@@ -1,5 +1,5 @@
 import styles from './explorestyles.module.css'
-import searchIcon from '../../../Assets/searchIcon.png'
+import searchIcon from './Assets/searchIcon.png'
 
 export function ExplorePage(props) {
   return <section className={styles.explorePage}>{props.children}</section>

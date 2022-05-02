@@ -1,4 +1,7 @@
 .canvas {
     /* touch-action: manipulation; */
     /* pointer-events: none; */
+    /* padding: 20px;
+    background-color: rebeccapurple;
+    position: absolute; */
 }

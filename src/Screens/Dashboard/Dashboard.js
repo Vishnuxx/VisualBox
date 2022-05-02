@@ -1,12 +1,17 @@
-import { NavItem , DashboardPage, Panel } from "./Components";
-import React , { useState } from "react";
-import { ProjectsTab } from "./ProjectsTab/ProjectsTab";
-import { ExploreTab } from "./ExploreTab/ExploreTab";
-import { StoreTab } from "./StoreTab/StoreTab";
-import { SettingsTab } from "./SettingsTab/SettingsTab";
-import { MenuBar } from "./Components/MenuBar/Menubar";
+import {
+  NavItem,
+  DashboardPage,
+  Panel,
+  MenuBar,
+  NavigationMenu,
+  SearchBar,
+} from "./Components";
+import React, { useState } from "react";
+import { ProjectsTab } from "./Tabs/ProjectsTab/ProjectsTab";
+import { ExploreTab } from "./Tabs/ExploreTab/ExploreTab";
+import { StoreTab } from "./Tabs/StoreTab/StoreTab";
+import { SettingsTab } from "./Tabs/SettingsTab/SettingsTab";
 
-import { NavigationMenu } from "./Components/NavigationMenu/NavigationMenu";
 
 
 export function Dashboard(props) {
@@ -34,35 +39,45 @@ export function Dashboard(props) {
     setactiveTab(tab);
   }
 
+  function activateTabState(tab) {
+    return activeTab === Tabs.PROJECTS ? "active" : "";
+  }
+
   return (
     <DashboardPage>
-      <MenuBar/>
+      <MenuBar>
+        <SearchBar></SearchBar>
+      </MenuBar>
       <Panel>{renderTab()}</Panel>
 
       <NavigationMenu>
         <NavItem
           onClick={() => setTab(Tabs.PROJECTS)}
-          state={activeTab === Tabs.PROJECTS ? "active" : ""}
-        >
-          Projects
-        </NavItem>
+          state={() => activateTabState(Tabs.PROJECTS)}
+          icon="https://img.icons8.com/plumpy/24/000000/project-management.png"
+          label="Projects"
+        ></NavItem>
         <NavItem
           onClick={() => setTab(Tabs.EXPLORE)}
-          state={activeTab === Tabs.EXPLORE ? "active" : ""}
-        >
-          Explore
-        </NavItem>
+          state={() => activateTabState(Tabs.EXPLORE)}
+          icon="https://img.icons8.com/plumpy/24/000000/compass.png"
+          label="Explore"
+        ></NavItem>
         <NavItem
           onClick={() => setTab(Tabs.STORE)}
-          state={activeTab === Tabs.STORE ? "active" : ""}
+          state={() => activateTabState(Tabs.STORE)}
+          icon="https://img.icons8.com/plumpy/24/000000/shopping-basket.png"
+          label="Store"
         >
-          Store
+        
         </NavItem>
         <NavItem
           onClick={() => setTab(Tabs.SETTINGS)}
-          state={activeTab === Tabs.SETTINGS ? "active" : ""}
+          state={() => activateTabState(Tabs.SETTINGS)}
+          icon="https://img.icons8.com/plumpy/24/000000/user-male-circle.png"
+          label="Settings"
         >
-          Settings
+         
         </NavItem>
       </NavigationMenu>
     </DashboardPage>

@@ -39,3 +39,19 @@
   color: white;
   font-weight: bold;
 }
+
+.closeBtn {
+  width : 10px;
+  height:10px;
+  background-color: rgb(213, 210, 210);
+  border-radius: 100%;
+  overflow: hidden;
+  position: absolute;
+  left: -5px;
+  top:-5px;
+  padding: 3px;
+}
+
+.closeBtn:hover {
+  background: #f44946;
+}
