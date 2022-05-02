@@ -13,7 +13,24 @@ export function EditorModel() {
 //METHODS
  // this.getFrames = () => this.frames;
 
-  this.currentFrame = () => this.frames[this.frameIndex];
+  this.currentFrame = () => {
+    return this.frames[this.frameIndex]
+  };
+
+  this.setSelectable = (bool) => {
+    this.canvas.selection = bool;
+  }
+
+  this.getTraceLayer = () => {
+    var thumb;
+    console.log(this.frameIndex)
+    if(this.frameIndex > 0) {
+      thumb =  this.frames[this.frameIndex -1].thumb;
+    }else {
+      thumb =this.frames[this.frameIndex ].thumb;
+    }
+    return thumb;
+  };
 
   this.unselectAll = () => this.canvas.discardActiveObject().renderAll();
 

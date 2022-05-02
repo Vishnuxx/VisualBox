@@ -5,6 +5,7 @@ import {  useRecoilValue, useSetRecoilState } from "recoil";
 import { addFrame, Canvas, Editor, framesListState } from "../../../State/EditorRecoil";
 import { EditorModel } from "../../../Model/EditorModel";
 import Player from "../../../Model/Player";
+import { TraceLayer } from "../TraceLayer/TraceLayer";
 
 fabric.Object.prototype.set({
   transparentCorners: false,
@@ -30,8 +31,14 @@ export function EditingCanvas(props) {
       fireMiddleClick: true,
       stopContextMenu: true,
       backgroundColor: "white",
-      selection:false,
+      //selection: false,
+      allowTouchScrolling: true,
+      interactive: false,
+      //isDrawingMode:true,
+      enableRetinaScaling: true,
+      viewportTransform : [0.7, 0, 0, 0.7, 50, 50]
     });
+    
     setEditor(editor);
     editor.canvas = canvasref.current;
     editor.addFrame();
@@ -39,5 +46,12 @@ export function EditingCanvas(props) {
      
   }, []);
 
-  return <canvas id="canvas" ref={fabricRef} className={style.canvas}></canvas>;
+
+  
+
+  return (
+    <div className={style.canvas}>
+      <canvas id="canvas" ref={fabricRef}></canvas>
+    </div>
+  );
 }

@@ -1,6 +1,15 @@
+import { useRecoilState } from "recoil";
 import { IconButton } from "../../../EditorUIControls/IconButton/IconButton";
+import { onToolBarOptionChanged } from "../../../State/EditorRecoil";
 import icon from "../Assets/line.png";
 
 export function AddLineButton(props) {
-  return <IconButton icon={icon} label="line" />;
+   const [optionType, setOption] = useRecoilState(onToolBarOptionChanged);
+
+   const TYPE = "line";
+   const isActive = optionType.includes(TYPE);
+   const onclick = () => {
+     setOption([TYPE]);
+   };
+  return <IconButton icon={icon} onClick={onclick} active={isActive} label="line" />;
 }

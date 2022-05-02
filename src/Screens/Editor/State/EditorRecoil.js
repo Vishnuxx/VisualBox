@@ -33,8 +33,8 @@ export const selectedFrameIndex = atom({
 
 //Toolbar
 
-export const currentSelectedToolOptionState = atom({
-  key: "",
-  default: ["select"]
-})
+export const onToolBarOptionChanged = atom({
+  key: "onToolBarOptionChanged",
+  default: ["select"],
+});
 

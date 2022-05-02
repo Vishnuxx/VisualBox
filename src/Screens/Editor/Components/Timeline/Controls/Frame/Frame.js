@@ -43,6 +43,7 @@ export function Frame(props) {
         }`}
       >
         {props.frameNumber}
+        
       </p>
       {props.children}
     </div>

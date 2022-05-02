@@ -7,7 +7,7 @@ import { AddTextButton } from "./Controls/AddTextButton";
 import { AddTriangleButton } from "./Controls/AddTriangleButton";
 import { DrawButton } from "./Controls/DrawButton";
 import { EraseButton } from "./Controls/EraseButton";
-import { MultiSelectButton, } from "./Controls/MultiSelectButton";
+
 
 import { ToggleSelectionButton } from "./Controls/toggleSelectionButton";
 
@@ -18,7 +18,6 @@ export function ToolBar(props) {
   return <section className={style.toolbar}>
     <ToggleSelectionButton></ToggleSelectionButton>
     <AddImageButton></AddImageButton>
-    <MultiSelectButton></MultiSelectButton>
     <AddTextButton></AddTextButton>
     <DrawButton></DrawButton>
     <EraseButton></EraseButton>
