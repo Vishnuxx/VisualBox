@@ -26,7 +26,10 @@ export const isPlayingState = atom({
   default: false,
 });
 
-
+export const selectedFrameIndex = atom({
+    key: "selectedframeIndex",
+    default: 0
+})
 
 //Toolbar
 
