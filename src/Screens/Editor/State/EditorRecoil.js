@@ -8,6 +8,8 @@ export const Editor = atom({
   dangerouslyAllowMutability: true,
 });
 
+//Timeline
+
 export const framesListState = atom({
   key: "framesListState",
   default: [],
@@ -24,8 +26,12 @@ export const isPlayingState = atom({
   default: false,
 });
 
-export const selectedFrameIndex = atom({
-    key: "selectedframeIndex",
-    default: 0
+
+
+//Toolbar
+
+export const currentSelectedToolOptionState = atom({
+  key: "",
+  default: ["select"]
 })
 

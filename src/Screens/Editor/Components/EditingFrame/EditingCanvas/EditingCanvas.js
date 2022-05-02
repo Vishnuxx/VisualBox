@@ -36,6 +36,7 @@ export function EditingCanvas(props) {
     editor.canvas = canvasref.current;
     editor.addFrame();
     setFrameListState([...editor.frames]);
+     
   }, []);
 
   return <canvas id="canvas" ref={fabricRef} className={style.canvas}></canvas>;
