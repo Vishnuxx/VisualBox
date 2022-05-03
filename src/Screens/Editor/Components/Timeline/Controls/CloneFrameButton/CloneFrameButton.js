@@ -10,6 +10,7 @@ export function CloneFrameButton(props) {
   const setSelectedFrameIndexState = useSetRecoilState(selectedFrameIndex);
   const addFrameToEditor = () => {
     editor.addFrame();
+    editor.selectFrame(editor.frames.length - 1);
     addframeState([...editor.frames]);
     setSelectedFrameIndexState(editor.frameIndex);
   };

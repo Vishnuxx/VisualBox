@@ -28,16 +28,17 @@ export function EditingCanvas(props) {
     if (!element) return canvasref.current?.dispose();
     const editor = new EditorModel();
     const player = new Player(editor);
+
     canvasref.current = new fabric.Canvas("canvas", {
-      height: 0,
-      width: 0,
+      height: editor.height,
+      width: editor.width,
       fireRightClick: true,
       fireMiddleClick: true,
       stopContextMenu: true,
       backgroundColor: "white",
       selection: false,
       allowTouchScrolling: true,
-      interactive: false,
+      interactive: true,
       //isDrawingMode:true,
       enableRetinaScaling: true,
       viewportTransform: [0.7, 0, 0, 0.7, 50, 50],
@@ -46,6 +47,7 @@ export function EditingCanvas(props) {
     setEditor(editor);
     editor.canvas = canvasref.current;
     editor.addFrame();
+    editor.selectFrame(editor.frames.length - 1);
     setFrameListState([...editor.frames]);
   }, []);
 

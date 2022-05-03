@@ -18,6 +18,7 @@ History.prototype = {
     if (this.historyEnabled === false) return;
     if (this.index === -1) this.index = 0;
     this.undos.push(command);
+    command.execute();
   },
 
   undo: function () {
@@ -25,6 +26,7 @@ History.prototype = {
     const cmd = this.undos.pop();
     if (cmd === undefined) return;
     this.redos.push(cmd);
+    cmd.undo();
   },
 
   redo: function () {
@@ -32,6 +34,7 @@ History.prototype = {
     const cmd = this.redos.pop();
     if (cmd === undefined) return;
     this.undos.push(cmd);
+    cmd.redo()
   },
 
   serialize: function () {
@@ -51,6 +54,6 @@ History.prototype = {
         history.redos.push(this.redos[i].serialize);
       }
     }
-    return history;
+    return history.toJSON();
   },
 };

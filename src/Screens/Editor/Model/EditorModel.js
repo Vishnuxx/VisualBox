@@ -40,7 +40,6 @@ export function EditorModel() {
     if (index < 0 && index > this.frames.length - 1) return;
     this.unselectAll();
     this.saveCurrentFrame();
-    
     this.frameIndex = index;
     this.loadFrame(this.currentFrame().data());
   };
@@ -49,7 +48,6 @@ export function EditorModel() {
     let frame = new Frame(this);
     this.frames.push(frame);
     this.saveFrame(frame)
-    this.selectFrame(this.frames.length -1);
   }
 
   this.removeFrame = (index) => {
