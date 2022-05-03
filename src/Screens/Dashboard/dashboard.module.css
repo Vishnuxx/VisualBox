@@ -29,7 +29,8 @@
   display: flex;
   flex-flow: row;
   align-items: center;
-  width: 250px;
+  width: 350px;
+ 
 }
 
 
@@ -64,12 +65,16 @@
     margin: 0;
     display: flex;
     flex-flow: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     padding: 0;
+    background-color: white;
     box-shadow: 0 0 2px 1px rgb(230, 230, 230);
     z-index: 1;
+height: 50px;
+    position: absolute;
+
       
   }
 
@@ -78,7 +83,9 @@
  width: fit-content;
  height: fit-content;
  padding: 0px;
-
+ margin-right: 20px;
+  position: absolute;
+  right: 0;
 }
 
   .searchInput {
@@ -163,7 +170,7 @@
     width: 100%;
     display: flex;
     flex-flow: row ;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
      box-shadow: 0 0 2px 1px rgb(230, 230, 230);
      z-index: 1;
@@ -178,6 +185,7 @@
     grid-area: panel;
     /* background-color: rgb(255, 255, 255); */
     width: 100%;
+    height: 100vh;
   }
 
    .nav {

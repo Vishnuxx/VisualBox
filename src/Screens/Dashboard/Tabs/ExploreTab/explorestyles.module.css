@@ -13,6 +13,7 @@
   width: 100%;
   animation: myAnim 100ms ease 0s 1 normal forwards;
   background-color: #f9f9f9;
+  overflow-y: scroll;
 }
 
 .topBar {
@@ -56,16 +57,23 @@
       box-shadow: 0 0 5px 7px rgb(218, 218, 218);
 }
 
+.footer{
+
+}
+
+.footerNav {
+  width: fit-content;
+}
+
 @media screen and (max-width: 600px) {
   .articlepane {
-    height: calc(100vh - 50px);
+    height: fit-content;
     display: grid;
     padding: 20px;
     padding-bottom: 60px;
     gap: 30px;
-
     overflow-x: hidden;
-    overflow-y: scroll;
+    /* height: fit-content; */
   }
 
   .post {
@@ -92,14 +100,13 @@
 
 @media screen and (min-width: 601px) {
   .articlepane {
-    height: calc(100vh - 50px);
+    height: fit-content;
     display: grid;
     padding: 20px;
-    /* padding-bottom: 60px; */
     gap: 10px;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    grid-auto-rows: auto;
-    overflow-y: scroll;
+    flex: 1;
+
   }
 
   .post {

@@ -10,13 +10,13 @@ import React, { useState } from "react";
 import { ProjectsTab } from "./Tabs/ProjectsTab/ProjectsTab";
 import { ExploreTab } from "./Tabs/ExploreTab/ExploreTab";
 import { StoreTab } from "./Tabs/StoreTab/StoreTab";
-import { SettingsTab } from "./Tabs/SettingsTab/SettingsTab";
+import { SettingsTab } from "./Tabs/ProfileTab/ProfileTab";
 import { AppLogo } from "../../Components/AppLogo/AppLogo";
 
 
 
 export function Dashboard(props) {
-  const Tabs = { PROJECTS: 0, EXPLORE: 1, STORE: 2, SETTINGS: 3 };
+  const Tabs = { PROJECTS: 0, EXPLORE: 1, STORE: 2, PROFILE: 3 };
   Object.freeze(Tabs);
 
   const [activeTab, setactiveTab] = useState(Tabs.PROJECTS);
@@ -29,7 +29,7 @@ export function Dashboard(props) {
         return <ExploreTab></ExploreTab>;
       case Tabs.STORE:
         return <StoreTab></StoreTab>;
-      case Tabs.SETTINGS:
+      case Tabs.PROFILE:
         return <SettingsTab></SettingsTab>;
       default:
         return;
@@ -47,8 +47,6 @@ export function Dashboard(props) {
   return (
     <DashboardPage>
       <MenuBar>
-        <AppLogo width="30px" height="30px"></AppLogo>
-        <h4>VisualBox</h4>
         <SearchBar></SearchBar>
       </MenuBar>
       <Panel>{renderTab()}</Panel>
@@ -73,8 +71,8 @@ export function Dashboard(props) {
           label="Store"
         ></NavItem>
         <NavItem
-          onClick={() => setTab(Tabs.SETTINGS)}
-          state={() => activateTabState(Tabs.SETTINGS)}
+          onClick={() => setTab(Tabs.PROFILE)}
+          state={() => activateTabState(Tabs.PROFILE)}
           icon="https://img.icons8.com/plumpy/24/000000/user-male-circle.png"
           label="Settings"
         ></NavItem>

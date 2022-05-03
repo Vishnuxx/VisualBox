@@ -1,0 +1,53 @@
+.profilePage {
+  height: 100vh;
+  width: 100%;
+  animation: myAnim 100ms ease 0s 1 normal forwards;
+  background-color: #f9f9f9;
+  overflow-y: scroll;
+}
+
+.topBar {
+  margin: 0;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: forwards;
+  transition: ease-in;
+  transition-delay: 1s;
+  padding-top: 5px;
+}
+
+.emptyBar {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contents {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    
+}
+
+
+.profileName {
+    padding: 5px;
+    width:200px;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.profileIcon {
+    height: 100px;
+    width:100px;
+}

@@ -1,3 +1,4 @@
+import { AppLogo } from '../../Components/AppLogo/AppLogo';
 import styles from './dashboard.module.css'
 
 export function DashboardPage(props) {
@@ -38,6 +39,11 @@ export function Panel(props) {
 export function MenuBar(props) {
     return (
       <menu className={styles.menubar}>
+        <div style={{width:"fit-content" , height:"fit-content",textAlign:"center"  , display:"flex" , alignItems:"center" , position:"absolute" , left:"0"}}>
+          <AppLogo width="30px" height="30px"></AppLogo>
+          <h4 style={{margin:"2px"}}>VisualBox</h4>
+        </div>
+
         {props.children}
       </menu>
     );
