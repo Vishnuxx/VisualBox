@@ -45,6 +45,14 @@ function Player(editor) {
   this.seekToFrame = (framenumber) => {
     this.currentFrameNumber = framenumber;
   };
+
+  this.startRecording = () => {
+
+  };
+
+  this.stopRecording = () => {
+
+  };
 }
 
 export default Player;

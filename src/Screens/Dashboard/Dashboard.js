@@ -11,6 +11,7 @@ import { ProjectsTab } from "./Tabs/ProjectsTab/ProjectsTab";
 import { ExploreTab } from "./Tabs/ExploreTab/ExploreTab";
 import { StoreTab } from "./Tabs/StoreTab/StoreTab";
 import { SettingsTab } from "./Tabs/SettingsTab/SettingsTab";
+import { AppLogo } from "../../Components/AppLogo/AppLogo";
 
 
 
@@ -46,6 +47,8 @@ export function Dashboard(props) {
   return (
     <DashboardPage>
       <MenuBar>
+        <AppLogo width="30px" height="30px"></AppLogo>
+        <h4>VisualBox</h4>
         <SearchBar></SearchBar>
       </MenuBar>
       <Panel>{renderTab()}</Panel>
@@ -68,17 +71,13 @@ export function Dashboard(props) {
           state={() => activateTabState(Tabs.STORE)}
           icon="https://img.icons8.com/plumpy/24/000000/shopping-basket.png"
           label="Store"
-        >
-        
-        </NavItem>
+        ></NavItem>
         <NavItem
           onClick={() => setTab(Tabs.SETTINGS)}
           state={() => activateTabState(Tabs.SETTINGS)}
           icon="https://img.icons8.com/plumpy/24/000000/user-male-circle.png"
           label="Settings"
-        >
-         
-        </NavItem>
+        ></NavItem>
       </NavigationMenu>
     </DashboardPage>
   );

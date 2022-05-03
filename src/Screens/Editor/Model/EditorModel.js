@@ -82,7 +82,16 @@ export function EditorModel() {
 
   
 
-  this.export = () => {};
+  this.export = async () => {
+    let data = [];
+    this.frames.map((frame , index)=> {
+      data.push(frame.data());
+    });
+    return {
+      version : "1.0",
+      frames : data
+    }
+  };
 
   this.saveCurrentFrame = () => {
     this.frames[this.frameIndex].save();

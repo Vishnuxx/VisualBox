@@ -38,7 +38,6 @@ export function Panel(props) {
 export function MenuBar(props) {
     return (
       <menu className={styles.menubar}>
-        <h3>VisualBox</h3>
         {props.children}
       </menu>
     );

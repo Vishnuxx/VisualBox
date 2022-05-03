@@ -6,7 +6,6 @@ export function ExploreTab() {
     <ExplorePage>
       <TopBar>
         <h1>Explore</h1>
-        <SearchBar></SearchBar>
       </TopBar>
       <ArticlesPane>
         <Post
