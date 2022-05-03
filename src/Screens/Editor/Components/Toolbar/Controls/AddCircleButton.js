@@ -15,7 +15,7 @@ export function AddCircleButton(props) {
   const onclick = () => {
     setOption([TYPE]);
   //  editor.canvas.add(
-   const obj =  new fabric.Circle({
+   let obj =  new fabric.Circle({
         radius: 100,
         fill: "",
         stroke: "red",

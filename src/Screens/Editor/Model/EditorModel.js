@@ -124,25 +124,24 @@ export function EditorModel() {
 
 export class Frame {
   constructor(editor) {
-    this.editor = editor;
-    this._thumbnail = null;
-    this._data = null;
-    this._history = new History();
-  }
+    var thumbnail = null;
+    var data = null;
+    this.history = new History();
 
-  execute = (command) => {
-      this._history.execute(command);
+    this.execute = (command) => {
+      this.history.execute(command);
     };
-  undo = () => {
-      this._history.undo();
+    this.undo = () => {
+      this.history.undo();
     };
-  redo = () => {
-      this._history.redo();
+    this.redo = () => {
+      this.history.redo();
     };
-  save = () => {
-      this._data = this.editor.canvas.toJSON();
-      this._thumbnail = this.editor.canvas.toDataURL();
+    this.save = () => {
+      data = editor.canvas.toJSON();
+      thumbnail = editor.canvas.toDataURL();
     };
-  thumb = () => this._thumbnail;
-  data = () => this._data;
+    this.thumb = () => thumbnail;
+    this.data = () => data;
+  }
 }

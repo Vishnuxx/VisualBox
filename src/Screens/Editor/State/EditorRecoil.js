@@ -13,7 +13,7 @@ export const Editor = atom({
 export const framesListState = atom({
   key: "framesListState",
   default: [],
-  // dangerouslyAllowMutability: true,
+  dangerouslyAllowMutability: true,
 });
 
 export const isLoopingState = atom({
