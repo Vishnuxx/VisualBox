@@ -1,7 +1,6 @@
-
+import { History } from "./History";
 
 export function EditorModel() {
-
   this.frameIndex = 0;
 
   this.canvas = null;
@@ -10,24 +9,24 @@ export function EditorModel() {
   this.height = 300;
   this.frames = []; //stores all frames
 
-//METHODS
- // this.getFrames = () => this.frames;
+  //METHODS
+  // this.getFrames = () => this.frames;
 
   this.currentFrame = () => {
-    return this.frames[this.frameIndex]
+    return this.frames[this.frameIndex];
   };
 
   this.setSelectable = (bool) => {
     this.canvas.selection = bool;
-  }
+  };
 
   this.getTraceLayer = () => {
     var thumb;
-    console.log(this.frameIndex)
-    if(this.frameIndex > 0) {
-      thumb =  this.frames[this.frameIndex -1].thumb;
-    }else {
-      thumb =this.frames[this.frameIndex ].thumb;
+    console.log(this.frameIndex);
+    if (this.frameIndex > 0) {
+      thumb = this.frames[this.frameIndex - 1].thumb;
+    } else {
+      thumb = this.frames[this.frameIndex].thumb;
     }
     return thumb;
   };
@@ -47,14 +46,14 @@ export function EditorModel() {
   this.addFrame = () => {
     let frame = new Frame(this);
     this.frames.push(frame);
-    this.saveFrame(frame)
-  }
+    this.saveFrame(frame);
+  };
 
   this.removeFrame = (index) => {
     this.frames.splice(index, 1);
   };
 
-  this.nextFrame =  () => {
+  this.nextFrame = () => {
     if (this.frameIndex < this.frames.length - 1) {
       this.frameIndex++;
     } else {
@@ -70,25 +69,35 @@ export function EditorModel() {
     }
   };
 
-  
-
-  this.moveFrameTo =  (fromIndex, toIndex) => {
+  this.moveFrameTo = (fromIndex, toIndex) => {
     if (fromIndex < 0 && fromIndex > this.frames.length - 1) return;
     if (toIndex < 0 && toIndex > this.frames.length - 1) return;
     this.splice(toIndex, 0, this.splice(fromIndex, 1)[0]);
   };
 
-  
-
   this.export = async () => {
     let data = [];
-    this.frames.map((frame , index)=> {
+    this.frames.map((frame, index) => {
       data.push(frame.data());
     });
     return {
-      version : "1.0",
-      frames : data
-    }
+      version: "1.0",
+      frames: data,
+    };
+  };
+
+  this.executeCommand = (command) => {
+    this.frames[this.frameIndex].execute(command);
+  };
+
+  this.undo = () => {
+    this.frames[this.frameIndex].undo();
+    this.canvas.renderAll();
+  };
+
+  this.redo = () => {
+    this.frames[this.frameIndex].redo();
+    this.canvas.renderAll();
   };
 
   this.saveCurrentFrame = () => {
@@ -100,7 +109,7 @@ export function EditorModel() {
   };
 
   this.loadFrame = (json) => {
-    const canv = this.canvas
+    const canv = this.canvas;
     canv.loadFromJSON(
       json,
       function () {
@@ -110,31 +119,30 @@ export function EditorModel() {
         // console.log(o, object);
       }
     );
-  }
-}
-
-
-
-export function Frame(editor) {
-  let thumbnail = null;
-  let data = null;
-  this.execute = (command) => {};
-  this.undo = () => {};
-  this.redo = () => {};
-  this.save = () => {
-    data = editor.canvas.toJSON();
-    thumbnail = editor.canvas.toDataURL();
   };
-  this.thumb = () => thumbnail;
-  this.data = () => data;
 }
 
-// function Frame(editor) {
-//     this.data = [];
-//     this.image = '';
-//     this.history = [];
-//     this.undo = () => {};
-//     this.redo = () => {};
-//     this.execute = (command) => {};
-//     this.save = ()=>{}
-// }
+export class Frame {
+  constructor(editor) {
+    this.editor = editor;
+    this._thumbnail = null;
+    this._data = null;
+    this._history = new History();
+  }
+
+  execute = (command) => {
+      this._history.execute(command);
+    };
+  undo = () => {
+      this._history.undo();
+    };
+  redo = () => {
+      this._history.redo();
+    };
+  save = () => {
+      this._data = this.editor.canvas.toJSON();
+      this._thumbnail = this.editor.canvas.toDataURL();
+    };
+  thumb = () => this._thumbnail;
+  data = () => this._data;
+}

@@ -1,43 +1,32 @@
-function History(editor) {
-  this.editor = editor;
-  this.undos = [];
-  this.redos = [];
-  this.lastCmdTime = new Date();
+export class History {
+  constructor() {
+    this.undos = [];
+    this.redos = [];
+  }
 
-  this.writeToStorage = false;
-  this.historyEnabled = true;
-  this.config = editor.config;
-
-  // signals
-
-  const scope = this;
-}
-
-History.prototype = {
-  execute: function (command) {
+  execute = (command) => {
     if (this.historyEnabled === false) return;
     if (this.index === -1) this.index = 0;
     this.undos.push(command);
     command.execute();
-  },
+  };
 
-  undo: function () {
+  undo = () => {
     if (this.historyEnabled === false) return;
     const cmd = this.undos.pop();
     if (cmd === undefined) return;
     this.redos.push(cmd);
     cmd.undo();
-  },
+  };
 
-  redo: function () {
+  redo = () => {
     if (this.historyEnabled === false) return;
     const cmd = this.redos.pop();
     if (cmd === undefined) return;
     this.undos.push(cmd);
-    cmd.redo()
-  },
-
-  serialize: function () {
+    cmd.redo();
+  };
+  serialize = () => {
     let history = {
       undos: [],
       redos: [],
@@ -55,5 +44,5 @@ History.prototype = {
       }
     }
     return history.toJSON();
-  },
-};
+  };
+}
