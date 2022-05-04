@@ -3,56 +3,19 @@ export function History() {
   this.redos = [];
   this.historyEnabled = true;
 
-  // this.execute = (command) => {
-  //   if (this.historyEnabled === false) return;
-  //   console.log("undos: " + undos, "redos: " + redos);
-  //   undos.push(command);
-
-  //   command.execute();
-  //   console.log("undos: " + undos, "redos: " + redos);
-  // };
-
-  // this.undo = () => {
-  //   if (this.historyEnabled === false) return;
-  //   const cmd = undos.pop();
-  //   if (cmd === undefined) return;
-  //   redos.push(cmd);
-  //   cmd.undo();
-  //   console.log("undos: " + undos, "redos: " + redos);
-  // };
-
-  // this.redo = () => {
-  //   if (this.historyEnabled === false) return;
-  //   const cmd = redos.pop();
-
-  //   if (cmd === undefined) return;
-  //   undos.push(cmd);
-  //   cmd.redo();
-  //   console.log("undos: " + undos, "redos: " + redos);
-  // };
-
-  // this.serialize = () => {
-  //   let history = {
-  //     undos: [],
-  //     redos: [],
-  //   };
-
-  //   for (let i = 0; i < this.undos.length; i++) {
-  //     if (this.undos[i].hasOwnProperty("serialize")) {
-  //       undos.push(this.undos[i].serialize);
-  //     }
-  //   }
-
-  //   for (let i = 0; i < this.redos.length; i++) {
-  //     if (this.redos[i].hasOwnProperty("serialize")) {
-  //       redos.push(this.redos[i].serialize);
-  //     }
-  //   }
-  //   return history.toJSON();
-  // };
 }
 
 History.prototype = {
+
+  hasUndo: function() {
+    return this.undos.length !== 0;
+  } ,
+
+  hasRedo: function() {
+    return this.redos.length !== 0;
+  },
+
+
   execute: function (command) {
     if (this.historyEnabled === false) return;
     console.log(this.undos)

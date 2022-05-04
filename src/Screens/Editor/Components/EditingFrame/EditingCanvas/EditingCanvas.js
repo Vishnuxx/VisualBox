@@ -11,6 +11,7 @@ import {
 import { EditorModel } from "../../../Model/EditorModel";
 import Player from "../../../Model/Player";
 import { TraceLayer } from "../TraceLayer/TraceLayer";
+import {  initCanvasTouchControls } from "./CanvasFunctions";
 
 fabric.Object.prototype.set({
   transparentCorners: false,
@@ -49,6 +50,8 @@ export function EditingCanvas(props) {
     editor.addFrame();
     editor.selectFrame(editor.frames.length - 1);
     setFrameListState([...editor.frames]);
+    initCanvasTouchControls(editor);
+    
   }, []);
 
   const containerRef = useRef();

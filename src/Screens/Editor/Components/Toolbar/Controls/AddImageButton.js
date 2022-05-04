@@ -10,6 +10,7 @@ export function AddImageButton(props) {
   const isActive = optionType.includes(TYPE);
   const onclick = () => {
     setOption([TYPE]);
+    
   }
     return <IconButton icon={icon} onClick={onclick} active={isActive} label="image"/>
 }

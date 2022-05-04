@@ -3,6 +3,7 @@ import { IconButton } from "../../../EditorUIControls/IconButton/IconButton";
 import { Canvas, Editor, onToolBarOptionChanged } from "../../../State/EditorRecoil";
 import { fabric } from "fabric";
 import icon from "../Assets/text.png";
+import { AddObjectCommand } from "../../../Model/Commands";
 
 export function AddTextButton(props) {
     const editor = useRecoilValue(Editor);
@@ -11,13 +12,14 @@ export function AddTextButton(props) {
     const isActive = optionType.includes(TYPE);
     const onclick = () => {
       setOption([TYPE]);
-      editor.canvas.add(
-        new fabric.IText("Text", {
+
+      var obj = new fabric.IText("Text", {
           
           left: 100,
           top: 100,
         })
-      );
+      
+      editor.executeCommand(new AddObjectCommand(editor, obj));
     };
   return (
     <IconButton
