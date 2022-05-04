@@ -11,12 +11,13 @@ export class UpdateCoordinatesCommand {
   execute = () => {
     this.x = this.object.left;
     this.y = this.object.top;
+    this.object.setCoords();
   };
 
   undo = () => {
     this.object.set("left" , this.oldX);
     this.object.set("top" , this.oldY);
-    // this.object.setCoords();
+    this.object.setCoords();
    
   };
 
@@ -24,6 +25,6 @@ export class UpdateCoordinatesCommand {
     
     this.object.set("left", this.x);
     this.object.set("top", this.y);
-    
+    this.object.setCoords();
   };
 }

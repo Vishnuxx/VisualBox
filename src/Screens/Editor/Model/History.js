@@ -21,6 +21,7 @@ History.prototype = {
     console.log(this.undos)
     this.undos = [...this.undos , command];
     command.execute();
+    if(this.hasRedo()) this.redos = [];
     console.log("undos: " + this.undos , "redos: " + this.redos);
   },
 

@@ -9,14 +9,16 @@ export class AddObjectCommand extends Command {
 
   execute = () => {
     this.editor.canvas.add(this.object);
+   
   };
 
   undo = () => {
     this.editor.canvas.remove(this.object);
+    
   };
 
   redo = () => {
-      
     this.editor.canvas.add(this.object);
+    this.object.setCoords();
   };
 }

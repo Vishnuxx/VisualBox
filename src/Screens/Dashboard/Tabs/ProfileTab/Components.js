@@ -20,6 +20,7 @@ export function EmptyBar(props) {
       <img
         style={{ width: "30px", height: "30px" }}
         src="https://img.icons8.com/plumpy/24/000000/documentary.png"
+        alt=''
       />
       <h3 style={{ margin: "3px" }}>Store has no items</h3>
       <h5 style={{ margin: "3px" }}></h5>

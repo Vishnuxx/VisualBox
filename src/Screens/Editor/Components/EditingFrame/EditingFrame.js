@@ -1,5 +1,6 @@
 
-import { EditingCanvas } from "./EditingCanvas/EditingCanvas";
+import { EditingCanvas } from "./Components/EditingCanvas/EditingCanvas";
+import { ProjectExport } from "../ProjectExport/ProjectExportScreen";
 import style from "./editingframe.module.css";
 
 //Container which holdss all canvases

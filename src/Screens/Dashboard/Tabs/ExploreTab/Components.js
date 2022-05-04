@@ -1,6 +1,5 @@
 import styles from './explorestyles.module.css'
-import searchIcon from './Assets/searchIcon.png'
-import { Link } from 'react-router-dom';
+
 
 export function ExplorePage(props) {
   return <section className={styles.explorePage}>{props.children}</section>
@@ -33,11 +32,11 @@ export function Post(props) {
 export function Footer(props) {
   return (
     <div className={styles.footer}>
-      <a className={styles.footerNav} href="">
+      <a className={styles.footerNav} href="/">
         Prev
       </a>
       <p style={{margin:"0"}}>1</p>
-      <a className={styles.footerNav} href="">
+      <a className={styles.footerNav} href="/">
         Next
       </a>
     </div>

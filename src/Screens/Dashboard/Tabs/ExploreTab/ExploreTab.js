@@ -1,4 +1,4 @@
-import { ArticlesPane, ExplorePage, Footer, Post, SearchBar, TopBar } from "./Components";
+import { ArticlesPane, ExplorePage, Footer, Post, TopBar } from "./Components";
 
 
 export function ExploreTab() {

@@ -11,7 +11,7 @@ import { ProjectsTab } from "./Tabs/ProjectsTab/ProjectsTab";
 import { ExploreTab } from "./Tabs/ExploreTab/ExploreTab";
 import { StoreTab } from "./Tabs/StoreTab/StoreTab";
 import { SettingsTab } from "./Tabs/ProfileTab/ProfileTab";
-import { AppLogo } from "../../Components/AppLogo/AppLogo";
+
 
 
 

@@ -38,3 +38,9 @@ export const onToolBarOptionChanged = atom({
   default: ["select"],
 });
 
+
+
+export const showProjectExportPage = atom({
+  key: "showProjectExportPage",
+  default: false,
+});

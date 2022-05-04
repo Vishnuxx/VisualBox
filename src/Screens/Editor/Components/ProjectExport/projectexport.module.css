@@ -1,0 +1,80 @@
+@keyframes myAnim {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.projectexportpage {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 3;
+    position: absolute;
+    animation: myAnim 100ms ease 0s 1 normal forwards;
+}
+
+.close {
+    display: none;
+}
+
+.closeButton {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    z-index: 1;
+    left: 10px;
+    top:10px;
+}
+
+.loadingPanel {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+}
+
+.loadingGif {
+    width: 200px;
+    height: 200px;
+}
+
+.publishButton {
+    background-color: black;
+    color: white;
+    width: 200px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.downloadButton {
+    margin-top: 20px;
+    background-color: rgb(223, 223, 223);
+    color: rgb(0, 0, 0);
+    width: 200px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.publishButton:hover {
+    background-color: rgb(73, 73, 73);
+    
+}
+
+.downloadButton:hover {
+    background-color: rgb(204, 204, 204);
+}

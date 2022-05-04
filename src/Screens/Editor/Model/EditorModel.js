@@ -126,16 +126,19 @@ export class Frame {
   constructor(editor) {
     var thumbnail = null;
     var data = null;
-    this.history = new History();
+    var history = new History();
+
+    this.hasUndo = () => history.hasUndo();
+    this.hasRedo = () => history.hasRedo();
 
     this.execute = (command) => {
-      this.history.execute(command);
+      history.execute(command);
     };
     this.undo = () => {
-      this.history.undo();
+      history.undo();
     };
     this.redo = () => {
-      this.history.redo();
+      history.redo();
     };
     this.save = () => {
       data = editor.canvas.toJSON();

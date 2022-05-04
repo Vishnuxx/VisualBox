@@ -22,7 +22,7 @@ export function NavItem(props) {
         } ${styles.noSelect} `}
         onClick={props.onClick}
       >
-        <img className={styles.icon} src={props.icon}></img>
+        <img className={styles.icon} src={props.icon} alt=""></img>
         <p className={styles.label}>{props.label}</p>
       </section>
     );

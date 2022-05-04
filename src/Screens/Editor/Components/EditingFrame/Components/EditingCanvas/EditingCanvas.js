@@ -1,17 +1,12 @@
 import style from "./editingcanvas.module.css";
 import { fabric } from "fabric";
-import { useCallback, useEffect, useRef } from "react";
-import { useRecoilValue, useSetRecoilState } from "recoil";
-import {
-  addFrame,
-  Canvas,
-  Editor,
-  framesListState,
-} from "../../../State/EditorRecoil";
-import { EditorModel } from "../../../Model/EditorModel";
-import Player from "../../../Model/Player";
-import { TraceLayer } from "../TraceLayer/TraceLayer";
-import {  initCanvasTouchControls } from "./CanvasFunctions";
+import { useCallback, useRef } from "react";
+import {  useSetRecoilState } from "recoil";
+import { Editor, framesListState } from "../../../../State/EditorRecoil";
+import { EditorModel } from "../../../../Model/EditorModel";
+import Player from "../../../../Model/Player";
+import { TraceLayer } from "../../TraceLayer/TraceLayer";
+import { initCanvasTouchControls } from "./CanvasFunctions";
 
 fabric.Object.prototype.set({
   transparentCorners: false,
@@ -37,7 +32,7 @@ export function EditingCanvas(props) {
       fireMiddleClick: true,
       stopContextMenu: true,
       backgroundColor: "white",
-      selection: false,
+      selection: true,
       allowTouchScrolling: true,
       interactive: true,
       //isDrawingMode:true,
@@ -51,11 +46,9 @@ export function EditingCanvas(props) {
     editor.selectFrame(editor.frames.length - 1);
     setFrameListState([...editor.frames]);
     initCanvasTouchControls(editor);
-    
   }, []);
 
   const containerRef = useRef();
-  
 
   return (
     <div className={style.canvas} ref={containerRef}>
@@ -63,7 +56,6 @@ export function EditingCanvas(props) {
     </div>
   );
 }
-
 
 // FOR ZOOMING AND PANNING
 // useEffect(() => {
