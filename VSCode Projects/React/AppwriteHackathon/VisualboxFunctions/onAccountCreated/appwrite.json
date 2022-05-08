@@ -1,0 +1,17 @@
+{
+    "projectId": "6264368c2ce9ff1591b0",
+    "projectName": "VisualBox",
+    "functions": [
+        {
+            "$id": "6276b61f540cf1edc5db",
+            "name": "onAccountCreated",
+            "runtime": "node-16.0",
+            "path": "functions/onAccountCreated",
+            "entrypoint": "src/index.js",
+            "execute": [],
+            "events": ["users.create" , "account.create"],
+            "schedule": "",
+            "timeout": 15
+        }
+    ]
+}

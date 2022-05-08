@@ -1,0 +1,12 @@
+bugs
+
+1. frame deletion
+2. frame arrangement
+3. drawing mode undo redo 
+
+
+
+features to be added 
+
+1.property bar
+2.
