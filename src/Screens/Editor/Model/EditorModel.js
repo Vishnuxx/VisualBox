@@ -9,8 +9,12 @@ export function EditorModel() {
   this.height = 300;
   this.frames = []; //stores all frames
 
+  this.player = null;
+  this.videoExporter = null;
+
   //METHODS
   // this.getFrames = () => this.frames;
+  this.getFrameCount = () => this.frames.length;
 
   this.currentFrame = () => {
     return this.frames[this.frameIndex];

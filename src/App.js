@@ -13,7 +13,9 @@ import { Dashboard } from "./Screens/Dashboard/Dashboard";
 import { EditorScreen } from "./Screens/Editor/EditorScreen";
 import { ErrorScreen } from "./Screens/ErrorScreen/ErrorScreen";
 import {MainScreen} from "./Screens/MainScreen/MainScreen";
+import {PublishScreen} from "./Screens/PublishScreen/PublishScreen"
 import { authState } from "./State/AuthState";
+
 
 function App() {
   const auth = useRecoilValue(authState);
@@ -42,8 +44,8 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Route path="*" element={<ErrorScreen/>}></Route>
-          <Route path="/" element={<MainScreen/>}></Route>
+          <Route path="*" element={<ErrorScreen />}></Route>
+          <Route path="/" element={<MainScreen />}></Route>
           {/* AUTH_SCREEN */}
           <Route
             exact
@@ -60,7 +62,6 @@ function App() {
                 <Dashboard />
               </RequireAuth>
             }
-           
           />
           {/* EDITOR_SCREEN */}
           <Route
@@ -69,6 +70,17 @@ function App() {
             element={
               <RequireAuth auth={auth}>
                 <EditorScreen />
+              </RequireAuth>
+            }
+          />
+
+          {/* PUBLISH_SCREEN */}
+          <Route
+            exact
+            path="/publish"
+            element={
+              <RequireAuth auth={auth}>
+                <PublishScreen />
               </RequireAuth>
             }
           />

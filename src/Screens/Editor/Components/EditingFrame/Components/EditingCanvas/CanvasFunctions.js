@@ -29,7 +29,7 @@ export function initCanvasTouchControls(editor) {
           oldy
         )
       );
-      console.log("sfjk");
+      //console.log("sfjk");
     }
   });
 

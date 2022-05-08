@@ -47,5 +47,10 @@ export const showProjectExportPage = atom({
 
 export const exportStatus = atom({
   key: "exportStatus",
-  default: "loading", //success , loading , failed
+  default: "exportsettings", // exportsettings , success , loading , failed
+});
+
+export const videoExportingProgress = atom({
+  key: "videoExportingProgress",
+  default: 0
 });

@@ -37,8 +37,8 @@ function Player(editor) {
   this.stop = () => {
     if (timer !== undefined) {
       clearInterval(timer);
-      this.currentFrameNumber = 0;
     }
+     this.currentFrameNumber = 0;
   };
 
 
@@ -46,12 +46,9 @@ function Player(editor) {
     this.currentFrameNumber = framenumber;
   };
 
-  this.startRecording = () => {
 
-  };
-
-  this.stopRecording = () => {
-
+  this.onFinishRendering = (callback) => {
+    callback();
   };
 }
 

@@ -7,6 +7,7 @@ import { EditorModel } from "../../../../Model/EditorModel";
 import Player from "../../../../Model/Player";
 import { TraceLayer } from "../../TraceLayer/TraceLayer";
 import { initCanvasTouchControls } from "./CanvasFunctions";
+import { VideoExporter } from "../../../../Model/VideoExporter";
 
 fabric.Object.prototype.set({
   transparentCorners: false,
@@ -23,7 +24,8 @@ export function EditingCanvas(props) {
   const fabricRef = useCallback((element) => {
     if (!element) return canvasref.current?.dispose();
     const editor = new EditorModel();
-    const player = new Player(editor);
+    new Player(editor);
+    
 
     canvasref.current = new fabric.Canvas("canvas", {
       height: editor.height,
@@ -40,8 +42,11 @@ export function EditingCanvas(props) {
       viewportTransform: [0.7, 0, 0, 0.7, 50, 50],
     });
 
-    setEditor(editor);
     editor.canvas = canvasref.current;
+    new VideoExporter(editor);
+
+    setEditor(editor);
+    
     editor.addFrame();
     editor.selectFrame(editor.frames.length - 1);
     setFrameListState([...editor.frames]);

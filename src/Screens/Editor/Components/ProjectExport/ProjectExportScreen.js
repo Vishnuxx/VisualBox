@@ -1,10 +1,11 @@
 import style from "./projectexport.module.css";
 import loadingGif from "./Assets/loadingfinger.gif";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import {
   Editor,
   exportStatus,
   showProjectExportPage,
+  videoExportingProgress,
 } from "../../../../State/EditorState";
 
 export function ProjectExport(props) {
@@ -14,16 +15,23 @@ export function ProjectExport(props) {
   const [isOpen, setOpen] = useRecoilState(showProjectExportPage);
   const close = () => {
     setOpen(false);
+    setExportStatusState("exportsettings");
   };
 
   const render = () => {
     switch (exportStatusState) {
+      case "exportsettings":
+        return <ExportSettingsBar></ExportSettingsBar>;
+
       case "success":
         return <DownloadSuccessBar></DownloadSuccessBar>;
+
       case "loading":
         return <LoadingBar></LoadingBar>;
+
       case "failed":
         return <ExportErrorBar></ExportErrorBar>;
+
       default:
         return <div></div>;
     }
@@ -42,9 +50,58 @@ export function ProjectExport(props) {
   );
 }
 
+function ExportSettingsBar(props) {
+  const editor = useRecoilValue(Editor);
+  const setExportStatusState = useSetRecoilState(exportStatus);
+  const setExportProgress = useSetRecoilState(videoExportingProgress);
+
+  const publishProject = () => {
+    setExportStatusState("loading");
+
+    
+  }
+
+  const publishVideo = () => {
+     setExportStatusState("loading");
+  }
+
+  const downloadVideo = () => {
+     setExportStatusState("loading");
+     editor.videoExporter.exportVideo(
+       (progress) => {
+         //onProgress
+         setExportProgress(progress);
+       },
+       () => {
+         //onFinish
+         setExportStatusState("success");
+        
+       }
+     );
+  }
+
+  return (
+    <div className={style.exportSettingsPanel}>
+      <img
+        src="https://media0.giphy.com/media/tIYA4g6xx9e4VBKKRe/giphy.gif?cid=ecf05e471zgw3yrgs2tqpbgnc9vxgv3mfzon5trvgnpl5lqe&rid=giphy.gif&ct=g"
+        alt="exportgif"
+      />
+      <button className={style.publishButton} onClick={publishProject} >
+        Publish as Project
+      </button>
+      <button className={style.publishButton} onClick={publishVideo}  >
+        Publish as Video
+      </button>
+      <button className={style.downloadButton} onClick={downloadVideo}  >
+        Download Video
+      </button>
+    </div>
+  );
+}
+
 function LoadingBar(props) {
   var progress = 0;
-  setInterval(()=>{
+  setInterval(() => {
     progress++;
   }, 1000);
   return (

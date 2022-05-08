@@ -1,7 +1,18 @@
+.menu::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.menu {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 @media screen and (orientation: portrait) {
   .menu {
     display: flex;
     flex-flow: row;
+    justify-content: center;
     align-items: center;
     margin: 0;
     position: absolute;
@@ -12,6 +23,7 @@
     background-color: rgb(255, 255, 255);
      box-shadow: 0 0 2px 1px rgb(230, 230, 230);
     cursor: pointer;
+    overflow-x: scroll;
   }
 }
 
