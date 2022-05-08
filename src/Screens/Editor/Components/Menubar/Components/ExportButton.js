@@ -1,6 +1,6 @@
 import { useSetRecoilState } from "recoil";
 import { IconButton } from "../../../EditorUIControls/IconButton/IconButton";
-import { showProjectExportPage } from "../../../State/EditorRecoil";
+import { showProjectExportPage } from "../../../../../State/EditorState";
 import icon from "../Asset/export.png";
 
 export function ExportButton(props) {

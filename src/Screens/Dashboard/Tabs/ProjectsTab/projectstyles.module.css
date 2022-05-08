@@ -13,7 +13,7 @@
   display: flex;
   flex-flow: column;
   height: calc(100vh - 50px);
-  animation: myAnim 100ms ease 0s 1 normal forwards;
+  animation: myAnim 300ms ease 0s 1 normal forwards;
   overflow-y: scroll;
   margin-top: 5px;
 }
@@ -23,19 +23,24 @@
   display: grid;
   padding: 20px;
   padding-bottom: 60px;
-  
   gap: 30px;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  box-sizing: border-box;
 }
 
 .menu {
   grid-area: menu;
   display: flex;
   height: 50px;
-  margin-top: 5px;
+ 
   justify-content: space-between;
   align-items: center;
   color: black;
+  width: 100%;
+  padding: 0 20px;
+  /* background-color: green; */
+  box-sizing: border-box;
+  margin: 0;
 }
 
 .createButton {
@@ -49,9 +54,9 @@
   min-width: 100px;
   height: fit-content;
   padding: 10px 3px;
-  margin-right: 30px;
   /* box-shadow: 0px 0px 2px 0px rgb(205, 205, 205); */
   text-decoration: none;
+  
 }
 
 .createButton:hover {
@@ -60,10 +65,53 @@
 
 .project_item {
   width: 100%;
+ 
   height: 200px;
-  background-color: rgb(234, 234, 234);
+  background-color: rgb(226, 226, 226);
   border-radius: 5px;
+  overflow: hidden;
 }
+
+.thumb {
+  background-color: rgb(29, 38, 46);
+  min-height: 1fr;
+  width: 100%;
+  height: 70%;
+}
+
+.titleContainer {
+  /* position: absolute; */
+  padding: 10px;
+  height: 30%;
+  background-color: rgb(238, 238, 238);
+
+}
+
+.title {
+  text-align: start;
+  margin:0;
+  font-size: medium;
+   white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.description {
+  white-space: nowrap;
+  text-align: start;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: rgb(71, 71, 71);
+  margin:0;
+  font-size: smaller;
+}
+
+.post:hover {
+      box-shadow: 0 0 5px 7px rgb(218, 218, 218);
+}
+
+
+
 
 .emptyBar {
   height: 100%;
@@ -84,7 +132,9 @@
     margin: 0;
     justify-content: space-between;
     align-items: center;
-    color: black;
+    padding: 0 20px;
+    /* background-color: blueviolet; */
+    box-sizing: border-box;
   }
 
   .createButton {
@@ -98,8 +148,9 @@
     width: 100%;
     height: fit-content;
     padding: 15px 3px;
-    margin-right: 30px;
     box-shadow: 0px 0px 2px 0px rgb(205, 205, 205);
     text-decoration: none;
+   
   }
+
 }

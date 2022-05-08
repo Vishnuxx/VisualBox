@@ -43,10 +43,13 @@ export function EditorModel() {
     this.loadFrame(this.currentFrame().data());
   };
 
-  this.addFrame = () => {
+  this.addFrame = (isNew) => {
     let frame = new Frame(this);
     this.frames.push(frame);
     this.saveFrame(frame);
+    if(isNew) {
+      frame.data().objects = [];
+    }
   };
 
   this.removeFrame = (index) => {

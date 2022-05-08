@@ -1,6 +1,6 @@
 import { useRecoilState, useRecoilValue } from "recoil";
 import { IconButton } from "../../../EditorUIControls/IconButton/IconButton";
-import { Editor, onToolBarOptionChanged } from "../../../State/EditorRecoil";
+import { Editor, onToolBarOptionChanged } from "../../../../../State/EditorState";
 import { fabric } from "fabric";
 import icon from "../Assets/triangle.png";
 

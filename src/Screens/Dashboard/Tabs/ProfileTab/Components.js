@@ -1,3 +1,5 @@
+import { useRecoilValue } from 'recoil';
+import { authState } from '../../../../State/AuthState';
 import style from './profiletab.module.css';
 
 export function ProfilePage(props) {
@@ -23,54 +25,60 @@ export function EmptyBar(props) {
         alt=''
       />
       <h3 style={{ margin: "3px" }}>Store has no items</h3>
-      <h5 style={{ margin: "3px" }}></h5>
+      {/* <h5 style={{ margin: "3px" }}></h5> */}
     </div>
   );
 }
 
 
-export function ProfileName(props) {
+export function ProfileNameAndIcon(props) {
     return (
       <div className={style.profileName}>
-        <h1 style={{ margin: "0 10px" }}>{props.name}</h1>
-        {/* <img
-          style={{
-            width: "20px",
-            height: "20px",
-            padding: "5px",
-            borderRadius: "100%",
-            overflow: "hidden",
-            background: "#eee",
-          }}
-          src="https://img.icons8.com/material-sharp/24/000000/edit--v1.png"
-        /> */}
+        <img
+          className={style.profileIcon}
+          src="https://img.icons8.com/external-flaticons-flat-flat-icons/128/000000/external-user-web-flaticons-flat-flat-icons-2.png"
+          alt='profileIcon'
+        />
+        <div style={{ display: "flex", flexFlow: "column" }}>
+          <h1 style={{ margin: "0", fontSize: "1.4rem" }}>{props.name}</h1>
+          <p
+            style={{
+              margin: "0px",
+              padding: "0px",
+              color: "grey",
+              fontSize: "1rem",
+              textAlign:"start"
+            }}
+          >
+            {props.email}
+          </p>
+        </div>
       </div>
     );
   
 }
 
-export function ProfileEmail(props) {
+export function SubHeadings(props) {
+  return <h3 className={style.subheading}>{props.children}</h3>
+}
+
+export function Option(props) {
+
   return (
-    <div className={style.profileName}>
-      <p style={{ margin: "0 10px" }}>{props.name}</p>
-      {/* <img
-          style={{
-            width: "20px",
-            height: "20px",
-            padding: "5px",
-            borderRadius: "100%",
-            overflow: "hidden",
-            background: "#eee",
-          }}
-          src="https://img.icons8.com/material-sharp/24/000000/edit--v1.png"
-        /> */}
+    <div className={style.option} onClick={props.onClick}>
+      <p className={style.optionHead}>{props.head}</p>
+      <p className={style.optionPara}>{props.para}</p>
     </div>
   );
 }
 
-export function ProfileIcon(props) {
-    return (
-      <img className={style.profileIcon} src="https://img.icons8.com/external-flaticons-flat-flat-icons/128/000000/external-user-web-flaticons-flat-flat-icons-2.png" />
-    );
-}
 
+export function LogoutButton(props) {
+  const auth = useRecoilValue(authState)
+  const logout = () => {
+    auth.logout((response)=>{
+      
+    },(error)=>{})
+  }
+  return <button onClick={logout} className={style.logoutbutton}>Logout</button>
+}

@@ -1,7 +1,7 @@
 import style from "./timeline.module.css";
 import { Frame } from "./Controls/Frame/Frame";
 import { useRecoilValue } from "recoil";
-import { Editor, framesListState } from "../../State/EditorRecoil";
+import { Editor, framesListState } from "../../../../State/EditorState";
 import { AddFrameButton } from "./Controls/AddFrameButton/AddFrameButton";
 import { CloneFrameButton } from "./Controls/CloneFrameButton/CloneFrameButton";
 

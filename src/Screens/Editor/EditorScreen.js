@@ -14,7 +14,6 @@ import { ProjectExport } from "./Components/ProjectExport/ProjectExportScreen";
 export function EditorScreen(props) {
   
   return (
-    <RecoilRoot>
       <main className={style.main}>
         <EditingFrame />
         <MenuBar />
@@ -23,6 +22,5 @@ export function EditorScreen(props) {
         <PropertyBar></PropertyBar>
         <ProjectExport></ProjectExport>
       </main>
-    </RecoilRoot>
   );
 }

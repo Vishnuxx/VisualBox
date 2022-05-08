@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { IconButton } from "../../../EditorUIControls/IconButton/IconButton";
-import { Editor, onToolBarOptionChanged } from "../../../State/EditorRecoil";
+import { Editor, onToolBarOptionChanged } from "../../../../../State/EditorState";
 import selectIcon from "../Assets/select.png";
 
 export function ToggleSelectionButton(props) {

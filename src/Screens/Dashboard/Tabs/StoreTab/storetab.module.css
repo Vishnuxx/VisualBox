@@ -7,15 +7,16 @@
 }
 
 .topBar {
-  margin: 0;
-  height: 50px;
+   height: 50px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   animation: forwards;
   transition: ease-in;
   transition-delay: 1s;
-  padding-top: 5px;
+  margin: 5px 0;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .emptyBar {

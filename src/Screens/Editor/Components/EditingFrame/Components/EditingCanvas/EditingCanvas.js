@@ -2,7 +2,7 @@ import style from "./editingcanvas.module.css";
 import { fabric } from "fabric";
 import { useCallback, useRef } from "react";
 import {  useSetRecoilState } from "recoil";
-import { Editor, framesListState } from "../../../../State/EditorRecoil";
+import { Editor, framesListState } from "../../../../../../State/EditorState";
 import { EditorModel } from "../../../../Model/EditorModel";
 import Player from "../../../../Model/Player";
 import { TraceLayer } from "../../TraceLayer/TraceLayer";

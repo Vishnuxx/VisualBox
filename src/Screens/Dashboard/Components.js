@@ -20,7 +20,11 @@ export function NavItem(props) {
         className={`${styles.navItem} ${
           props.state === "active" ? styles.active : ""
         } ${styles.noSelect} `}
-        onClick={props.onClick}
+        onClick={(e)=>{
+          e.preventDefault();
+          props.onClick()
+          
+        }}
       >
         <img className={styles.icon} src={props.icon} alt=""></img>
         <p className={styles.label}>{props.label}</p>

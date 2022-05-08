@@ -21,7 +21,7 @@ export function Post(props) {
         <img src={props.postThumb} alt={props.thumbAlt} />
       </div>
       <div className={styles.postTitleContainer}>
-        <h3 className={styles.postTitle}>{props.postTitle}</h3>
+        <p className={styles.postTitle}>{props.postTitle}</p>
         <p className={styles.postDescription}>{props.postDescription}</p>
       </div>
     </div>

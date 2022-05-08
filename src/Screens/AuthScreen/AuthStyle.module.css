@@ -1,118 +1,164 @@
+@keyframes myAnim {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
 .main {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  overflow-y: scroll;
+  animation: myAnim 100ms ease 0s 1 normal forwards;
+}
+
+.background {
+  width: 60vw;
+  height: 100vh;
+  object-fit: contain;
+
+}
+
+
+.section {
+    display: flex;
+  flex-flow: column;
+  width: fit-content;
+  height: 100vh;
+ 
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+
+.tabpanel {
+  display: flex;
+  justify-content: space-around;
+}
+
+form {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  width: 30vw;
+  height: fit-content;
+  box-sizing: content-box;
+  animation: myAnim 100ms ease 0s 1 normal forwards;
+  /* margin-right: 50px; */
+}
+
+.login-form .title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.label {
+  margin-top: 20px;
+  width: 100%;
+  text-align: start;
+  color: grey;
+}
+
+.inputHolder {
+  margin-top: 20px;
+  background-color: #f9fbfe;
+  padding: 10px 0px;
+  border-radius: 5px;
+  width: 100%;
+  padding: 10px 10px;
+  box-sizing: border-box;
+  border: 2px solid black;
+}
+
+.input {
+  display: flex;
+  border: none;
+  color: #000a47;
+  font-size: 1rem;
+  outline: 0;
+  background-color: transparent;
+  position: relative;
+  width: 100%;
+}
+
+.submit {
+  background-color: #2d333e;
+  border: 0;
+  border-radius: 0.4rem;
+  width: 100%;
+  height: 40px;
+  margin-top: 40px;
+  color: white;
+}
+
+.submit:hover {
+  background-color: rgb(73, 73, 73);
+}
+
+.link {
+  font-size: 1rem;
+  margin-top: 20px;
+  background-color: #e4e4e4;
+  color: rgb(0, 0, 0);
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.link:hover {
+  cursor: pointer;
+  background-color: rgb(204, 204, 204);
+}
+
+@media screen and (max-width: 600px) {
+  .main {
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 100vh; 
+    height: 100vh;
     padding: 0;
-    overflow-y:scroll;
     
-}
+    overflow-y: scroll;
 
-.title {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 100%;
-}
+    animation: myAnim 100ms ease 0s 1 normal forwards;
+  }
 
-section {
-    display: flex;
-    flex-flow: column;
-    width: fit-content;
-    height: fit-content;
-}
-
-.tabpanel {
-    display: flex;
-    justify-content: space-around;
-    
-}
-
-form {
+  form {
     display: flex;
     flex-flow: column;
     align-items: center;
     justify-content: center;
-    width: 250px;
-    height: 400px;
-    box-sizing: border-box;
-    
-}
-
-.link {
-    color: rgb(51, 51, 51);
-    font-size: 1rem;
-    text-decoration: underline;
-}
-
-.link:hover {
-    color: orange;
-    cursor: grab;
-}
-
-.login-form .title {
-   width: 100%;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-
-}
-
-
-.label {
-    margin-top: 20px;
-    width: 100%;
-    text-align: start;
-    color: grey;
-}
-
-.inputHolder {
-    margin-top:20px;
-    background-color: #efefef;
-    padding: 10px 0px;
-    border-radius: 5px;
-    width: 100%;
-    padding: 10px 10px;
-}
-
-.input {
-    display: flex;
-    border: none;
-    color: #000a47;
-    font-size: 1rem;
-    outline: 0;
-    background-color: transparent;
-    position: relative;
-    width: 100%;
-}
-
-.submit {
-    background-color:#2D333E;
-    border: 0;
-    border-radius: 0.4rem;
-    width: 100%;
-    margin-top: 40px;
-    color: white;
-   
-    padding: 15px 50px;
-
-}
-
-.submit:hover {
-    background-color:#535867 ;
-}
-
-@media screen and (max-width: 600px) {
-    form {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: center;
+    margin-right: 0px;
     width: 80vw;
-    height: 400px;
-    box-sizing: border-box;
     
-}
+  }
+
+  .background {
+    display: none;
+  }
 }

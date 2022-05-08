@@ -15,14 +15,21 @@ export function TopBar(props) {
 export function CreateButton(props) {
     return (
       <Link to="/editor" className={styles.createButton}>Create</Link>
-     
+      
     );
 }
 
 export function ProjectItem(props) {
     return (
-        <div className={styles.project_item}>
+      <div className={styles.project_item}>
+        <div className={styles.thumb}>
+          <img src={props.thumb}  />
         </div>
+        <div className={styles.titleContainer}>
+          <p className={styles.title}>{props.postTitle}</p>
+          <p className={styles.description}>{props.postDescription}</p>
+        </div>
+      </div>
     );
 }
 

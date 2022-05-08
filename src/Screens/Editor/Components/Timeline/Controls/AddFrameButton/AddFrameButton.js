@@ -3,7 +3,7 @@ import {
   Editor,
   framesListState,
   selectedFrameIndex,
-} from "../../../../State/EditorRecoil";
+} from "../../../../../../State/EditorState";
 import { TextButton } from "../../../../EditorUIControls/TextButton/TextButton";
 import style from "./addframe.module.css";
 //import newFrame from '../Assets/addFrame.png'
@@ -16,7 +16,7 @@ export function AddFrameButton(props) {
     // 
     // DATA
     // 
-    editor.addFrame();
+    editor.addFrame(true);
     editor.selectFrame(editor.frames.length - 1);
     //
     // STATE

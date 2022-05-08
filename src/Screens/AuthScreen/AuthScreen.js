@@ -1,47 +1,71 @@
+import { useEffect } from "react";
 
-
-import { useState } from "react";
-
-import { AuthPage, LoginForm, SignUpForm } from "./component";
+import { AuthPage } from "./component";
 import style from "./AuthStyle.module.css";
+
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+
+import { LoginForm } from "./Components/LoginForm";
+import { SignUpForm } from "./Components/SignupForm";
+import { useRecoilValue } from "recoil";
+import { authState } from "../../State/AuthState";
+
 export function AuthScreen(props) {
-  const Tab = {
-    LOGIN: 1,
-    SIGNUP: 2,
-  };
-  Object.freeze(Tab);
 
-  const [index, setindex] = useState(1);
+  const auth = useRecoilValue(authState);
+  const navigate = useNavigate();
+  const { locationstate } = useLocation();
 
-  function showTab() {
-    switch (index) {
-      case Tab.LOGIN:
-        return (
-          <LoginForm>
-            <p className={style.link} onClick={() => setindex(Tab.SIGNUP)}>
-              Signup
-            </p>
-          </LoginForm>
-        );
+  useEffect(()=>{
 
-      case Tab.SIGNUP:
-        return (
-          <SignUpForm>
-            <p className={style.link} onClick={() => setindex(Tab.LOGIN)}>
-              Login
-            </p>
-          </SignUpForm>
-        );
+    try{
+    if(auth.checkLogin()){
+      navigate(locationstate || '/dashboard');
+    }else{
 
-      default:
-        return;
     }
+  
+  }catch(e) {
+    
+    console.log(e)
   }
+  })
 
   return (
     <AuthPage>
-     
-      {showTab()}
+      <Routes>
+        <Route
+          path="*"
+          element={
+            <LoginForm auth={props.auth}>
+              <p className={style.link} onClick={() => navigate("signup")}>
+                Signup
+              </p>
+            </LoginForm>
+          }
+        ></Route>
+        <Route
+          path="login"
+          element={
+            <LoginForm auth={props.auth}>
+              <p className={style.link} onClick={() => navigate("signup")}>
+                Signup
+              </p>
+            </LoginForm>
+          }
+        ></Route>
+
+        <Route
+          path="signup"
+          element={
+            <SignUpForm auth={props.auth}>
+              <p className={style.link} onClick={() => navigate("login")}>
+                Login
+              </p>
+            </SignUpForm>
+          }
+        ></Route>
+      </Routes>
     </AuthPage>
   );
 }

@@ -1,6 +1,6 @@
 import { useRecoilState } from "recoil";
 import { IconButton } from "../../../EditorUIControls/IconButton/IconButton";
-import { onToolBarOptionChanged } from "../../../State/EditorRecoil";
+import { onToolBarOptionChanged } from "../../../../../State/EditorState";
 import icon from "../Assets/erase.png";
 
 export function EraseButton(props) {

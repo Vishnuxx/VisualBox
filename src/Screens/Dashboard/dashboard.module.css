@@ -1,8 +1,13 @@
  .active {
-     background-color: rgb(228, 228, 228);
+     background-color: #e4e4e4;
     padding: auto;
     font-weight: bold;
     color: black;
+  }
+
+  .main{
+    padding: 0;
+    margin: 0;
   }
 
   .noSelect {
@@ -58,6 +63,7 @@
     overflow: hidden;
     padding: 0;
     height: 100vh;
+    box-sizing: border-box;
   }
 
   .menubar {
@@ -102,7 +108,7 @@ height: 50px;
     display: flex;
     flex-direction: row;
     height: calc(100vh - 50px);
-    width: 100%;
+    width: 100vw;
     overflow-y: scroll;
   }
 
@@ -219,11 +225,11 @@ font-size: small;
 
   }
 
-  .navItem.active {
+  /* .navItem.active {
     background-color: #f1f1f1;
     border-right: 5px solid #8b56fc;
     padding: auto;
-  }
+  } */
 
 
   .navItem:hover {

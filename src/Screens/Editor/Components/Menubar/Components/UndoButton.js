@@ -1,6 +1,6 @@
 import { useRecoilValue } from "recoil";
 import { IconButton } from "../../../EditorUIControls/IconButton/IconButton";
-import { Editor } from "../../../State/EditorRecoil";
+import { Editor } from "../../../../../State/EditorState";
 import icon from "../Asset/undoIcon.png";
 
 export function UndoButton(props) {

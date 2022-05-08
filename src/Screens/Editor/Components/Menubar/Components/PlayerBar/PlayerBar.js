@@ -9,7 +9,7 @@ import {
   Editor,
   isLoopingState,
   isPlayingState,
-} from "../../../../State/EditorRecoil";
+} from "../../../../../../State/EditorState";
 
 export default function PlayerBar(props) {
   return (

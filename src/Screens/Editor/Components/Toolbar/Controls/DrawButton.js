@@ -1,6 +1,6 @@
 import { useRecoilState, useRecoilValue } from "recoil";
 import { IconButton } from "../../../EditorUIControls/IconButton/IconButton";
-import { Editor, onToolBarOptionChanged } from "../../../State/EditorRecoil";
+import { Editor, onToolBarOptionChanged } from "../../../../../State/EditorState";
 import icon from "../Assets/draw.png";
 
 export function DrawButton(props) {

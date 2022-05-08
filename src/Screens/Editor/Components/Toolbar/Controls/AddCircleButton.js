@@ -1,7 +1,7 @@
 import { IconButton } from "../../../EditorUIControls/IconButton/IconButton";
 import icon from "../Assets/circle.png";
 import { fabric } from "fabric";
-import { Editor, onToolBarOptionChanged } from "../../../State/EditorRecoil";
+import { Editor, onToolBarOptionChanged } from "../../../../../State/EditorState";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { AddObjectCommand } from "../../../Model/Commands";
 
