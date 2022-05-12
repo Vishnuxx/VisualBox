@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
+import { auth } from "../../../../Services/Appwrite";
 import {
   Contents,
   LogoutButton,
@@ -13,6 +14,21 @@ import { ManageTeams } from "./OptionComponents/ManageTeams/ManageTeams";
 
 export function ProfileTab() {
   const navigete = useNavigate();
+   var [details, setDetails] = useState({
+     name: "",
+     email: "",
+   });
+   useEffect(() => {
+     auth.checkAuthenticated(
+       (res) => {
+         setDetails({
+           name: res.name,
+           email: res.email
+         })
+       },
+       (err) => {}
+     );
+   }, []);
 
   return (
     <ProfilePage>
@@ -26,8 +42,8 @@ export function ProfileTab() {
             element={
               <>
                 <ProfileNameAndIcon
-                  name="Vishnu"
-                  email="email"
+                  name={details.name}
+                  email={details.email}
                 ></ProfileNameAndIcon>
                 <SubHeadings>Teams</SubHeadings>
                 <Option onClick={()=>navigete("teams")} head="Manage Teams" para="view manage your teams" />

@@ -113,7 +113,7 @@ export default App;
 function RequireAuth({ auth, children }) {
   //on development mode
   const location = useLocation();
-  return /*auth.checkLogin() === true ?*/ true?(
+  return auth.checkLogin() === true ?(
     children
   ) : (
     <Navigate to="/auth" replace state={{ path: location.pathname }} />

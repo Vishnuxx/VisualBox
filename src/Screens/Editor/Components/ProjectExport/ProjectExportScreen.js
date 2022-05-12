@@ -96,14 +96,14 @@ function ExportSettingsBar(props) {
 
   //download project
   const downloadProject = () => {
-    // editor.downloadProject((res)=>{
+    editor.downloadProject((res)=>{
+ setExportStatusState("savetocloud");
+ setCurrentTypeState("project");
+    }, err=>{
 
-    // }, err=>{
+    })
 
-    // })
-
-    setExportStatusState("savetocloud");
-    setCurrentTypeState("project");
+   
   };
 
   //download video

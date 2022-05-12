@@ -19,9 +19,9 @@ export function ManageTeams(props) {
                   <button className={style.addTeamButton}>Add Team</button>
                 </div>
 
-                <TeamListItem name="ideologics"></TeamListItem>
-                <TeamListItem name="Vishu"></TeamListItem>
-                <TeamListItem name="kuttu"></TeamListItem>
+                <TeamListItem name="Team1"></TeamListItem>
+                <TeamListItem name="Team2"></TeamListItem>
+                <TeamListItem name="Team3"></TeamListItem>
               </>
             }
           />
@@ -63,11 +63,11 @@ export function TeamMembersSection(props) {
           <button className={style.addTeamButton}>Add Member</button>
         </div>
         <div>
-          <Member name="Vishnu" id="12345" />
-          <Member name="Vishnu" id="12345" />
-          <Member name="Vishnu" id="12345" />
-          <Member name="Vishnu" id="12345" />
-          <Member name="Vishnu" id="12345" />
+          <Member name="User12" id="34" />
+          <Member name="User3" id="53" />
+          <Member name="user4" id="65" />
+          <Member name="user7" id="23" />
+          <Member name="user9" id="98" />
           
         </div>
       </div>

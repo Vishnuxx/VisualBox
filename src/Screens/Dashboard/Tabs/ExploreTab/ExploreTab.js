@@ -45,7 +45,7 @@ export function ExploreTab() {
               key={index}
               postTitle={elem.title}
               postDescription={elem.description}
-              postThumb=""
+              postThumb={elem.thumbnail}
               onClick={openProject}
             />
           );

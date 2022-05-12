@@ -72,7 +72,7 @@ export function AuthScreen(props) {
           element={
             <VerifyMail auth={props.auth}>
               <p className={style.link} onClick={() => navigate("login")}>
-                Login
+                Back to Login
               </p>
             </VerifyMail>
           }

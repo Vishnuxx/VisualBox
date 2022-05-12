@@ -48,7 +48,7 @@ export function ProjectsTab() {
             <ProjectItem
               onClick={() => openProject()}
               key={index}
-              postThumb=""
+              postThumb={elem.thumbnail}
               postTitle={elem.title}
               postDescription={elem.description}
             ></ProjectItem>

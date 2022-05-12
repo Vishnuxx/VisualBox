@@ -25,6 +25,7 @@
   width: 60vw;
   height: 100vh;
   object-fit: contain;
+  filter: saturate(0%) contrast(400%);
 
 }
 
@@ -101,7 +102,7 @@ form {
 }
 
 .submit {
-  background-color: #2d333e;
+  background-color: #0f1010;
   border: 0;
   border-radius: 0.4rem;
   width: 100%;

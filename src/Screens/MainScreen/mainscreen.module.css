@@ -61,6 +61,7 @@
 .btn {
     border-radius: 5px;
     min-width: 250px;
+    text-decoration: none;
 }
 
 .login {

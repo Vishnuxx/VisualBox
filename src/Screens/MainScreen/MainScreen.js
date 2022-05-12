@@ -12,14 +12,24 @@ export function MainScreen(props) {
     <main className={style.main}>
       <section className={`${style.MainScreen}`}>
         <Title></Title>
-        <img className={style.background} src={background} alt="background animation" />
+        <img
+          className={style.background}
+          src={background}
+          alt="background animation"
+        />
         <div className={`${style.content}`}>
-          <AuthButton className={`${style.btn} ${style.login}`} onClick={gotoAuthPage}>
+          <AuthButton
+            className={`${style.btn} ${style.login}`}
+            onClick={gotoAuthPage}
+          >
             Get Started
           </AuthButton>
-          <AuthButton className={`${style.btn} ${style.signup}`}>
+          <a
+            className={`${style.btn} ${style.signup}`}
+            href="https://github.com/Vishnuxx/VisualBox"
+          >
             Read More
-          </AuthButton>
+          </a>
 
           <a
             href="https://appwrite.io/"
@@ -40,10 +50,10 @@ export function MainScreen(props) {
           </a>
         </div>
       </section>
-      <Page heading="title1" paragraph="desc1" swap={true} />
+      {/* <Page heading="title1" paragraph="desc1" swap={true} />
       <Page heading="title1" paragraph="desc1" swap={false} />
-      <Page heading="title1" paragraph="desc1"swap={true} />
-      <Page heading="title1" paragraph="desc1" swap={false} />
+      <Page heading="title1" paragraph="desc1"swap={true} /> */}
+      {/* <Page heading="title1" paragraph="desc1" swap={false} /> */}
     </main>
   );
 }

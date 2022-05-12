@@ -13,8 +13,7 @@ export function VerifyMail(props) {
       e.target.elements["email"].value,
       e.target.elements["password"].value,
       (response) => {
-        navigate("/dashboard");
-        console.log("login success");
+        navigate("/");
       },
       (error) => {
         alert(error.message);
@@ -31,7 +30,7 @@ export function VerifyMail(props) {
         <h3>VerifyMail</h3>
       </div>
 
-      <div className={style.inputHolder}>
+      {/* <div className={style.inputHolder}>
         <input
           className={style.input}
           type="email"
@@ -39,12 +38,12 @@ export function VerifyMail(props) {
           name="email"
           required={true}
         ></input>
-      </div>
+      </div> */}
       <div className={style.inputHolder}>
         <input
           className={style.input}
-          type="password"
-          placeholder="Enter Password"
+          type="text"
+          placeholder="enter verification code"
           name="password"
           required={true}
         ></input>
@@ -54,7 +53,7 @@ export function VerifyMail(props) {
         className={style.submit}
         type="submit"
         form="loginform"
-        value="Login"
+        value="Verify"
       ></input>
       {props.children}
     </form>
