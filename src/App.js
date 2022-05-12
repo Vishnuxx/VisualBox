@@ -9,34 +9,30 @@ import {
 import { useRecoilValue } from "recoil";
 import "./App.css";
 import { AuthScreen } from "./Screens/AuthScreen/AuthScreen";
+import { CreateProjectScreen } from "./Screens/CreateProjectScreen/CreateProjectScreen";
 import { Dashboard } from "./Screens/Dashboard/Dashboard";
+import { ViewProject } from "./Screens/ViewProjectScreen/ViewProject";
 import { EditorScreen } from "./Screens/Editor/EditorScreen";
 import { ErrorScreen } from "./Screens/ErrorScreen/ErrorScreen";
-import {MainScreen} from "./Screens/MainScreen/MainScreen";
-import {PublishScreen} from "./Screens/PublishScreen/PublishScreen"
+import { MainScreen } from "./Screens/MainScreen/MainScreen";
+import { PublishScreen } from "./Screens/PublishScreen/PublishScreen";
 import { authState } from "./State/AuthState";
-
 
 function App() {
   const auth = useRecoilValue(authState);
-  
-  
+
   useEffect(() => {
-   
-      auth.checkAuthenticated(
-        (response) => {
-          console.log("loggedIn");
-          auth.setAuthenticated(true);
-        },
-        (error) => {
-          console.log("not logged in");
-          auth.setAuthenticated(false);
-        }
-      );
-   
-    
-    
-  }, []);
+    auth.checkAuthenticated(
+      (response) => {
+        console.log("loggedIn");
+        auth.setAuthenticated(true);
+      },
+      (error) => {
+        console.log("not logged in");
+        auth.setAuthenticated(false);
+      }
+    );
+  }, );
 
   auth.setAuthenticated(false);
   //console.log(auth);
@@ -84,6 +80,28 @@ function App() {
               </RequireAuth>
             }
           />
+
+          {/* CREATE_PROJECT_SCREEN */}
+          <Route
+            exact
+            path="/create"
+            element={
+              <RequireAuth auth={auth}>
+                <CreateProjectScreen />
+              </RequireAuth>
+            }
+          />
+
+          {/* CREATE_PROJECT_SCREEN */}
+          <Route
+            exact
+            path="/view"
+            element={
+              <RequireAuth auth={auth}>
+                <ViewProject />
+              </RequireAuth>
+            }
+          />
         </Routes>
       </div>
     </Router>
@@ -92,10 +110,10 @@ function App() {
 
 export default App;
 
-function RequireAuth({ auth , children }) {  //on development mode
+function RequireAuth({ auth, children }) {
+  //on development mode
   const location = useLocation();
-  // return auth.checkLogin() === true 
-  return true? (
+  return /*auth.checkLogin() === true ?*/ true?(
     children
   ) : (
     <Navigate to="/auth" replace state={{ path: location.pathname }} />

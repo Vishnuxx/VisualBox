@@ -1,4 +1,7 @@
-import { Link, unstable_HistoryRouter } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useRecoilValue } from 'recoil';
+import { cloudfunctions } from '../../../../Services/Appwrite';
+import { EditorState } from '../../../../State/EditorState';
 import styles from './projectstyles.module.css';
 
 
@@ -13,17 +16,23 @@ export function TopBar(props) {
 
 
 export function CreateButton(props) {
+    const editor = useRecoilValue(EditorState);
+    const navigate = useNavigate();
+    const create = () => {
+       navigate("/create");
+    }
+   
     return (
-      <Link to="/editor" className={styles.createButton}>Create</Link>
+      <button className={styles.createButton} onClick={create}>Create</button>
       
     );
 }
 
 export function ProjectItem(props) {
     return (
-      <div className={styles.project_item}>
+      <div className={styles.project_item} onClick={props.onClick}>
         <div className={styles.thumb}>
-          <img src={props.thumb}  />
+          {/* <img src={props.thumb}  /> */}
         </div>
         <div className={styles.titleContainer}>
           <p className={styles.title}>{props.postTitle}</p>
@@ -43,9 +52,10 @@ export function EmptyBar(props) {
       <img
         style={{ width: "30px", height: "30px" }}
         src="https://img.icons8.com/plumpy/24/000000/documentary.png"
+        alt=''
       />
-      <h3 style={{ margin: "3px" }}>You havent created any projects.</h3>
-      <h5 style={{ margin: "3px" }}>Click create button to create project</h5>
+      <h3 style={{ margin: "3px" }}>{props.title}</h3>
+      <h5 style={{ margin: "3px" }}>{props.message}</h5>
     </div>
   );
 }

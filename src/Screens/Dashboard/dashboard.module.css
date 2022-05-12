@@ -136,6 +136,7 @@ height: 50px;
     justify-content: center;
     padding: 3px;
     border-radius: 5px;
+   
   }
 
   
@@ -213,6 +214,7 @@ height: 50px;
     align-items: center;
     padding: 10px;
     border-radius: 10px;
+    margin: 5px 0;
   }
 
   .label {

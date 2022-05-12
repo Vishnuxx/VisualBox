@@ -1,10 +1,8 @@
 import { Route, Routes, useNavigate } from "react-router-dom";
-import { useRecoilValue, useSetRecoilState } from "recoil";
-import { currentTeamPageState } from "../../../../../../State/Dashboard_ProfileState";
 import style from "./manageteams.module.css"
 
 export function ManageTeams(props) {
-    const currentTeam = useRecoilValue(currentTeamPageState);
+   
     return (
       <section className={style.manageTeams}>
         <Routes>
@@ -85,6 +83,7 @@ function Member(props) {
         </div>
 
         <img
+          alt=""
           className={style.deleteMemberButton}
           src="https://img.icons8.com/plumpy/24/000000/cancel.png"
         />

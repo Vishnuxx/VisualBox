@@ -9,6 +9,7 @@ import { LoginForm } from "./Components/LoginForm";
 import { SignUpForm } from "./Components/SignupForm";
 import { useRecoilValue } from "recoil";
 import { authState } from "../../State/AuthState";
+import { VerifyMail } from "./Components/VerifyMailForm";
 
 export function AuthScreen(props) {
 
@@ -63,6 +64,17 @@ export function AuthScreen(props) {
                 Login
               </p>
             </SignUpForm>
+          }
+        ></Route>
+
+        <Route
+          path="verify"
+          element={
+            <VerifyMail auth={props.auth}>
+              <p className={style.link} onClick={() => navigate("login")}>
+                Login
+              </p>
+            </VerifyMail>
           }
         ></Route>
       </Routes>

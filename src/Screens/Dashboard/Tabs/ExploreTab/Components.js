@@ -16,7 +16,7 @@ export function ArticlesPane(props) {
 
 export function Post(props) {
   return (
-    <div className={styles.post}>
+    <div className={styles.post} onClick={props.onClick}>
       <div className={styles.postThumb}>
         <img src={props.postThumb} alt={props.thumbAlt} />
       </div>

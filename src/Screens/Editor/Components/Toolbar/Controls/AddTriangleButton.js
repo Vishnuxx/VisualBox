@@ -1,11 +1,14 @@
 import { useRecoilState, useRecoilValue } from "recoil";
 import { IconButton } from "../../../EditorUIControls/IconButton/IconButton";
-import { Editor, onToolBarOptionChanged } from "../../../../../State/EditorState";
+import {
+  EditorState,
+  onToolBarOptionChanged,
+} from "../../../../../State/EditorState";
 import { fabric } from "fabric";
 import icon from "../Assets/triangle.png";
 
 export function AddTriangleButton(props) {
-  const editor = useRecoilValue(Editor);
+  const editor = useRecoilValue(EditorState);
   const [optionType, setOption] = useRecoilState(onToolBarOptionChanged);
 
   const TYPE = "triangle";

@@ -1,12 +1,11 @@
 import style from "./playerbar.module.css";
 import playicon from "./Assets/play.png";
 import pauseicon from "./Assets/pause.png";
-import stopicon from "./Assets/stop.png";
 import skipstarticon from "./Assets/skipstart.png";
 import loopicon from "./Assets/loopicon.png";
 import { useRecoilState, useRecoilValue } from "recoil";
 import {
-  Editor,
+  EditorState,
   isLoopingState,
   isPlayingState,
 } from "../../../../../../State/EditorState";
@@ -22,23 +21,21 @@ export default function PlayerBar(props) {
   );
 }
 function FpsButton(props) {
-  const editor = useRecoilValue(Editor);
+  const editor = useRecoilValue(EditorState);
   const click = (e) => {
     const player = editor.player;
     player.fps = e.target.value;
-    console.log(e.target.value)
+    console.log(e.target.value);
   };
   return (
     <select
-    defaultValue="12"
+      defaultValue="12"
       name="fps"
       onChange={(val) => click(val)}
       className={style.fpsSelect}
     >
       <option value="6">6fps</option>
-      <option value="12">
-        12fps
-      </option>
+      <option value="12">12fps</option>
       <option value="24">24fps</option>
       <option value="30">30fps</option>
     </select>
@@ -46,24 +43,27 @@ function FpsButton(props) {
 }
 
 function PlayPauseButton(props) {
-  const editor = useRecoilValue(Editor);
+  const editor = useRecoilValue(EditorState);
   const [isPlaying, startPlaying] = useRecoilState(isPlayingState);
   const click = () => {
     startPlaying(!isPlaying);
     if (isPlaying) {
-     editor.player.pause();
+      editor.player.pause();
       console.log("stopped");
     } else {
-      
-       editor.player.play(function () {
-         //when player finished
-       });
+      editor.player.play(
+        function() {
+          //onProgress
+        },
+        function () {
+        //when player finished
+      });
       console.log("started");
     }
   };
   return (
     <img
-      className={`${style.icon} ${isPlaying ? style.active :  "" }`}
+      className={`${style.icon} ${isPlaying ? style.active : ""}`}
       src={isPlaying ? pauseicon : playicon}
       onClick={click}
       alt="playpauseicon"
@@ -72,16 +72,23 @@ function PlayPauseButton(props) {
 }
 
 function SkipStartButton(props) {
-   const editor = useRecoilValue(Editor);
-   const player = editor.player;
-   const click = () => {
-     player.stop();
-   };
-  return <img className={style.icon} src={skipstarticon} onClick={click} alt="skipstarticon" />;
+  const editor = useRecoilValue(EditorState);
+  const player = editor.player;
+  const click = () => {
+    player.stop();
+  };
+  return (
+    <img
+      className={style.icon}
+      src={skipstarticon}
+      onClick={click}
+      alt="skipstarticon"
+    />
+  );
 }
 
 function LoopButton(props) {
-  const editor = useRecoilValue(Editor);
+  const editor = useRecoilValue(EditorState);
   const [isLooping, setLooping] = useRecoilState(isLoopingState);
   const click = () => {
     editor.player.loop = !editor.player.loop;
@@ -95,5 +102,4 @@ function LoopButton(props) {
       alt="loopButton"
     />
   );
-
 }

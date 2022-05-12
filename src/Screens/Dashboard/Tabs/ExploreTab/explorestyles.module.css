@@ -46,7 +46,7 @@
 }
 
 .postTitleContainer {
-   padding: 10px;
+  padding: 10px;
   height: 30%;
   background-color: rgb(238, 238, 238);
 }
@@ -74,20 +74,29 @@
 }
 
 
+.footer {
+  display: flex;
+  justify-content: center;
+ 
+  justify-self: center;
+  align-self: center;
+
+}
 
 .footerNav {
   width: fit-content;
+  margin: 0px 30px;
 }
 
 @media screen and (max-width: 600px) {
   .articlepane {
-    height: fit-content;
+    /* height: 100%; */
     display: grid;
     padding: 20px;
     padding-bottom: 60px;
     gap: 30px;
     overflow-x: hidden;
-    /* height: fit-content; */
+    height: fit-content;
   }
 
  
@@ -96,11 +105,11 @@
 
 @media screen and (min-width: 601px) {
   .articlepane {
-    height: fit-content;
+    height: 100%;
     display: grid;
     padding: 20px;
-    gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     flex: 1;
 
   }

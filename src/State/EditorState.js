@@ -1,12 +1,21 @@
-import { atom , selector } from "recoil";
+import { atom } from "recoil";
+import { EditorModel } from "../Screens/Editor/Model/EditorModel";
+import Player from "../Screens/Editor/Model/Player";
+import { VideoExporter } from "../Screens/Editor/Model/VideoExporter";
+import { fabric } from "fabric";
 
+export const editor = new EditorModel();
+editor.canvas = new fabric.Canvas();
 
+new Player(editor);
+new VideoExporter(editor);
 
-export const Editor = atom({
+export const EditorState = atom({
   key: "editor",
-  default: "",
+  default: editor,
   dangerouslyAllowMutability: true,
 });
+
 
 //Timeline
 
@@ -27,9 +36,9 @@ export const isPlayingState = atom({
 });
 
 export const selectedFrameIndex = atom({
-    key: "selectedframeIndex",
-    default: 0
-})
+  key: "selectedframeIndex",
+  default: 0,
+});
 
 //Toolbar
 
@@ -37,8 +46,6 @@ export const onToolBarOptionChanged = atom({
   key: "onToolBarOptionChanged",
   default: ["select"],
 });
-
-
 
 export const showProjectExportPage = atom({
   key: "showProjectExportPage",
@@ -52,5 +59,15 @@ export const exportStatus = atom({
 
 export const videoExportingProgress = atom({
   key: "videoExportingProgress",
-  default: 0
+  default: 0,
+});
+
+export const editorConfigState = atom({
+  key: "editorConfigState",
+  default: {
+    projectname: "VisualBoxProject",
+    aspectratio: "16:9",
+    retinascale: false,
+  },
+  dangerouslyAllowMutability: true,
 });

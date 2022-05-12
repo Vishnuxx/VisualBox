@@ -1,5 +1,5 @@
 import { atom } from "recoil";
-import { auth } from "../Model/Appwrite";
+import { auth } from "../Services/Appwrite";
 
 
 

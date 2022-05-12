@@ -1,7 +1,10 @@
 
 export function Auth(sdk) {
   const auth = sdk.account;
+
   var isLoggedIn = false;
+
+  this.id = null;
 
   this.checkLogin = () => isLoggedIn;
 
@@ -9,11 +12,12 @@ export function Auth(sdk) {
     try {
       const promise = auth.get();
       promise.then(
-        function (response) {
+        (response)=> {
           isLoggedIn = true;
+          this.id = response["$id"]
           onAuthenticated(response);
         },
-        function (error) {
+        (error)=> {
           isLoggedIn = false;
           onFailure(error);
         }
@@ -35,6 +39,8 @@ export function Auth(sdk) {
     );
   };
 
+ 
+
   this.login = (email, password, onSuccess, onFailure) => {
     auth.createSession(email, password).then(
       function (response) {
@@ -55,6 +61,8 @@ export function Auth(sdk) {
     localStorage.setItem("auth_state", val);
     isLoggedIn = val;
   };
+
+  
 
   this.logout = (onSuccess , onFailure) => {
     auth.deleteSession("current").then(

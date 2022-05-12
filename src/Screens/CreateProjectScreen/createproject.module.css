@@ -1,0 +1,132 @@
+.main {
+  padding: 0;
+  margin: 0;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+}
+
+.menu {
+  height: fit-content;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100vw;
+  font-weight: bold;
+}
+
+.form {
+  /* box-shadow: 0 0 4px 3px rgb(230, 230, 230); */
+  width: 50vw;
+  max-width: 500px;
+  /* background-color: rgb(255, 255, 255); */
+  padding: 30px;
+  box-sizing: border-box;
+  border: 15px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.section .label {
+  margin: 0;
+  padding: 0;
+}
+
+.textfield {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+
+  margin: 15px 0px;
+}
+
+.textfield > input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid rgb(180, 180, 180);
+  box-sizing: border-box;
+  margin-top: 5px;
+}
+
+.dimInp {
+  padding: 5px;
+  border: none;
+  margin-top:30px;
+  display: flex;
+  width: 100px;
+  flex-flow: column;
+  
+  align-items: flex-start;
+}
+
+
+.dimInp>input {
+  border: none;
+  padding: 5px;
+  margin:5px 0;
+   border: 1px solid rgb(180, 180, 180);
+  border-radius: 5px;
+}
+
+
+.submit {
+  background-color: #2d333e;
+  border: 0;
+  border-radius: 0.4rem;
+  width: 100%;
+  height: 40px;
+  margin-top: 40px;
+  color: rgb(242, 241, 241);
+  margin: 15px 0px;
+}
+
+.submit:hover {
+  background-color: #3e434b;
+}
+
+.submit:active {
+  background-color: #545455;
+}
+
+.canvasSizePallette {
+  display: flex;
+  flex-flow: column;
+  width: fit-content;
+  height: fit-content;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 5px;
+ 
+}
+
+.canvasSizePallette:hover {
+  background-color: #c2c2c2;
+}
+
+.canvasSizePallette:active {
+  background-color: #bababa;
+}
+
+.activePallette {
+   background-color: #bababa;
+}
+
+@media screen and (max-width: 600px) {
+  .form {
+    box-shadow: none;
+    width: 100vw;
+    height: 100%;
+    min-width: 250px;
+    /* background-color: rgb(255, 255, 255); */
+    padding: 30px;
+    box-sizing: border-box;
+    border: 15px;
+  }
+}

@@ -8,7 +8,7 @@ function Player(editor) {
   this.loop = false;
   this.fps = 12;
 
-  this.play = (onFinish) => {
+  this.play = (onProgress , onFinish) => {
     this.frameCount = this.editor.frames.length-1;
     this.editor.saveCurrentFrame();
     timer = setInterval(() => {
@@ -22,6 +22,7 @@ function Player(editor) {
        }else {
            this.editor.loadFrame(this.editor.getFrame(this.currentFrameNumber).data());
        }
+       if(onProgress !== undefined) onProgress(this.currentFrameNumber);
        this.currentFrameNumber++;
     }, 1000 / this.fps);
   };

@@ -8,6 +8,8 @@
   }
 }
 
+
+
 .projectexportpage {
     position: absolute;
     width: 100vw;
@@ -15,6 +17,7 @@
     z-index: 3;
     position: absolute;
     animation: myAnim 100ms ease 0s 1 normal forwards;
+    overflow-y: scroll;
 }
 
 .close {
@@ -44,6 +47,10 @@
     width: 200px;
     height: 200px;
 }
+
+
+
+
 
 .publishButton {
     margin-top: 20px;
@@ -96,3 +103,78 @@
     width:200px;
     height: auto;
 }
+
+
+
+
+.file {
+    display: flex;
+    flex-flow: column;
+    background-color: rgb(236, 236, 236);
+    padding: 5px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+.savetocloudpanel {
+    display: flex;
+    flex-flow: column;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    z-index: 3;
+
+}
+
+
+
+.form {
+    margin-top: 100px 0 ;
+    padding: 0;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+
+}
+
+
+form>p {
+    font-size: small;
+}
+
+
+
+.input {
+    width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(180, 180, 180);
+  box-sizing: border-box;
+  margin-top: 5px;
+}
+
+.inputdescription {
+     width: 100%;
+     resize: none;
+}
+
+
+
+
+
+
+
+
+

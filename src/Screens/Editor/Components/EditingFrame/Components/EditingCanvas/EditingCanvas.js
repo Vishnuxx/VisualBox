@@ -1,63 +1,67 @@
 import style from "./editingcanvas.module.css";
-import { fabric } from "fabric";
-import { useCallback, useRef } from "react";
-import {  useSetRecoilState } from "recoil";
-import { Editor, framesListState } from "../../../../../../State/EditorState";
-import { EditorModel } from "../../../../Model/EditorModel";
-import Player from "../../../../Model/Player";
-import { TraceLayer } from "../../TraceLayer/TraceLayer";
-import { initCanvasTouchControls } from "./CanvasFunctions";
-import { VideoExporter } from "../../../../Model/VideoExporter";
 
-fabric.Object.prototype.set({
-  transparentCorners: false,
-  cornerStyle: "circle",
-  cornerColor: "#3880ff",
-  cornerSize: 10,
-});
+import { useRef } from "react";
+
+
 
 export function EditingCanvas(props) {
-  const canvasref = useRef(null);
-  const setEditor = useSetRecoilState(Editor);
-  const setFrameListState = useSetRecoilState(framesListState);
+  // const canvasref = useRef(null);
+  // const setEditor = useSetRecoilState(EditorState);
+  // const setFrameListState = useSetRecoilState(framesListState);
 
-  const fabricRef = useCallback((element) => {
-    if (!element) return canvasref.current?.dispose();
-    const editor = new EditorModel();
-    new Player(editor);
+  // const fabricRef = useCallback((element) => {
+  //   if (!element) return canvasref.current?.dispose();
+  //   const editor = new EditorModel();
+  //   new Player(editor);
+
+  //   canvasref.current = new fabric.Canvas("canvas", {
+  //     height: editor.height,
+  //     width: editor.width,
+  //     fireRightClick: true,
+  //     fireMiddleClick: true,
+  //     stopContextMenu: true,
+  //     backgroundColor: "white",
+  //     selection: true,
+  //     allowTouchScrolling: true,
+  //     interactive: true,
+  //     //isDrawingMode:true,
+  //     enableRetinaScaling: true,
+  //     viewportTransform: [0.7, 0, 0, 0.7, 50, 50],
+  //   });
+
+  //   editor.canvas = canvasref.current;
+  //   new VideoExporter(editor);
+
     
 
-    canvasref.current = new fabric.Canvas("canvas", {
-      height: editor.height,
-      width: editor.width,
-      fireRightClick: true,
-      fireMiddleClick: true,
-      stopContextMenu: true,
-      backgroundColor: "white",
-      selection: true,
-      allowTouchScrolling: true,
-      interactive: true,
-      //isDrawingMode:true,
-      enableRetinaScaling: true,
-      viewportTransform: [0.7, 0, 0, 0.7, 50, 50],
-    });
+  //   // editor.addFrame();
+  //   //editor.createProject(AppStorage.getEditorConfigs());
+  //   editor.loadProject(
+  //     {
+  //       version: 1,
+  //       config: AppStorage.getEditorConfigs(),
+  //       frames:
+  //         '[{"version":"5.2.1","objects":[],"background":"white"}]',
+  //     },
+  //     () => {
 
-    editor.canvas = canvasref.current;
-    new VideoExporter(editor);
+  //       //onFinishLoading
+  //       console.log(AppStorage.getEditorConfigs());
+  //       // editor.selectFrame(editor.frames.length - 1);
+  //       setFrameListState([...editor.frames]);
+  //       console.log([...editor.frames]);
+  //       initCanvasTouchControls(editor);
+  //     }
+  //   );
 
-    setEditor(editor);
-    
-    editor.addFrame();
-    editor.selectFrame(editor.frames.length - 1);
-    setFrameListState([...editor.frames]);
-    initCanvasTouchControls(editor);
-  }, []);
+  //   setEditor(editor);
+  // }, []);
 
   const containerRef = useRef();
 
   return (
     <div className={style.canvas} ref={containerRef}>
-      <canvas id="canvas" ref={fabricRef}></canvas>
+      <canvas id="canvas" ref={props.fabricRef}></canvas>
     </div>
   );
 }

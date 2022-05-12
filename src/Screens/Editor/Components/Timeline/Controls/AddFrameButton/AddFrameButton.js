@@ -1,6 +1,6 @@
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import {
-  Editor,
+  EditorState,
   framesListState,
   selectedFrameIndex,
 } from "../../../../../../State/EditorState";
@@ -9,13 +9,13 @@ import style from "./addframe.module.css";
 //import newFrame from '../Assets/addFrame.png'
 
 export function AddFrameButton(props) {
-  const editor = useRecoilValue(Editor);
+  const editor = useRecoilValue(EditorState);
   const addframeState = useSetRecoilState(framesListState);
   const setSelectedFrameIndexState = useSetRecoilState(selectedFrameIndex);
   const addFrameToEditor = () => {
-    // 
+    //
     // DATA
-    // 
+    //
     editor.addFrame(true);
     editor.selectFrame(editor.frames.length - 1);
     //

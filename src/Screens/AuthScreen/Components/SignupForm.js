@@ -1,5 +1,5 @@
 
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { authState } from "../../../State/AuthState";
 import style from "../AuthStyle.module.css";
@@ -7,10 +7,22 @@ import style from "../AuthStyle.module.css";
 
 export function SignUpForm(props) {
   const auth = useRecoilValue(authState);
-
+  const location = useLocation()
 
   const navigate = useNavigate();
 
+  const handleEmailVerifiction = (onSuccess , onFailure) => {
+    let promise = auth.createVerification(location + "/auth/verify");
+
+    promise.then(
+      function (response) {
+        onSuccess(response)
+      },
+      function (error) {
+        onFailure(error)
+      }
+    );
+  }
 
 
   const handlelogin = (email , password) => {
@@ -22,7 +34,7 @@ export function SignUpForm(props) {
           console.log("login success");
         },
         (error) => {
-          alert("login" + error);
+          alert("login" + error.message);
           auth.setAuthenticated(false);
         }
       );

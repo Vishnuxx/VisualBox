@@ -30,6 +30,7 @@
     right: 0;
     left: 0;
     background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 2px 1px rgb(230, 230, 230);
     border-radius: 10px;
     overflow-x: scroll;
     overflow-y: hidden;
@@ -53,7 +54,7 @@
     width: 60vw;
     border-radius: 10px;
     background-color: white;
-    
+    box-shadow: 0 0 2px 1px rgb(230, 230, 230);
   }
 }
 
