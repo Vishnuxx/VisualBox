@@ -1,13 +1,8 @@
-### Overview of My Submission
+### Overview 
 VisualBox is a frame animation builder. You can Design, Build , share and Collaborate your animations in real-time using this. 
 It can generate projects and videos at runtime.
 
-Built with a modular design to make it more scalable.
-
-
-### Submission Category: 
-
- Wacky Wildcards
+Built with a modular design .
 
 
 ### Link to Code
