@@ -16,6 +16,7 @@ Built with a modular design .
 - Fabricjs
 
 <img width="1440" alt="Screenshot 2022-05-13 at 3 13 26 AM" src="https://user-images.githubusercontent.com/74808440/168183623-ba14c616-3cbf-4f47-bb3e-bf03c443630c.png">
+<img width="1440" alt="Screenshot 2022-05-13 at 4 19 34 AM" src="https://user-images.githubusercontent.com/74808440/168183660-5b8483b0-ffd4-4074-b4d3-d147487fc47c.png">
 <!-- <img width="1439" alt="Screenshot 2022-05-13 at 4 00 44 AM" src="https://user-images.githubusercontent.com/74808440/168183637-100fbcd2-48b3-465e-9bf2-6ea692fc0bf7.png"> -->
 <img width="1440" alt="Screenshot 2022-05-13 at 4 07 43 AM" src="https://user-images.githubusercontent.com/74808440/168183641-9a0e103a-5a63-4b95-bcf2-9cadfed31367.png">
 <img width="738" alt="Screenshot 2022-05-13 at 4 07 52 AM" src="https://user-images.githubusercontent.com/74808440/168183643-186907ad-8867-4c44-b381-102928873e60.png">
@@ -25,7 +26,6 @@ Built with a modular design .
 <img width="1440" alt="Screenshot 2022-05-13 at 4 08 57 AM" src="https://user-images.githubusercontent.com/74808440/168183653-9653f5ed-b533-456b-a6f7-288891dd3a85.png">
 <img width="1440" alt="Screenshot 2022-05-13 at 4 11 30 AM" src="https://user-images.githubusercontent.com/74808440/168183654-fef7c088-69e1-4b16-948d-1c24cc333164.png">
 <img width="1440" alt="Screenshot 2022-05-13 at 4 11 45 AM" src="https://user-images.githubusercontent.com/74808440/168183657-1db9e4bb-11ba-4552-ae90-70dce0f2f65c.png">
-<img width="1440" alt="Screenshot 2022-05-13 at 4 19 34 AM" src="https://user-images.githubusercontent.com/74808440/168183660-5b8483b0-ffd4-4074-b4d3-d147487fc47c.png">
 <img width="1013" alt="Screenshot 2022-05-13 at 4 23 33 AM" src="https://user-images.githubusercontent.com/74808440/168183661-2adf34b1-0546-4101-84f7-bb83cf0b7b79.png">
 
 ## Future goals
